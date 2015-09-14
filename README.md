@@ -47,14 +47,15 @@ Root:
               string: password_digest
               string: session_token
 ```
-### User associations
+### User Associations
   * has many boards
   * has many pins through boards
   * has many followers
   * has many followed_topics (tags)
   * has many followed_boards (boards)
   * has many followed_pinners (users)
-### User funtionality
+  
+### User Funtionality
   * Users can sign up
   * Users can sign in (create session)
   * Users can sign out (destroy session)
@@ -65,7 +66,7 @@ Root:
   * Users can follow categories
 
 
-### Boards:
+## Boards:
 ```
             DB:
             string : title
@@ -75,17 +76,19 @@ Root:
             integer: collaborator_id (user)
             boolean: secret
 ```
+### Board Associations
   * is taggable
   * belongs to user
   * has many pins
   * has many tags
-
+  
+### Board Functionality
   * Boards can be pinned to
   * Boards can be secret (private/invitation to view)
   * Boards can be followed
 
 
-### Pin
+## Pin
 ```
             DB:
             string : title
@@ -97,30 +100,39 @@ Root:
             string : image_alt
             integer: via_user_id (user)
 ```
+### Pin Associations
   * belongs to user
   * belongs to board
   * has many comments
 
+### Pin functionality
   * Pins are pinned to boards
   * Pins have an image
 
-### Comment
+## Comment
 ```
             DB:
             integer: author_id (user)
             text   : body
             integer: pin_id
 ```
+### Comment Associations
   * belongs to user
   * belongs to pin
 
-### Tags/Category
+### Comment Functionality
+  * Comments can be written on pins
+  * Comments have text and can be edited
+
+## Tags/Category
 ```
             DB:
             string: name
 ```
+### Tag Associations
   * belongs to board
   * belongs to pin
-
+### Tag Functionality
   * Tags can be searched by.
   * Tags can be followed
+  * Tags can be put on boards and pins
