@@ -2,16 +2,16 @@
 
 Mimimum Project: 
 
-Create accounts
-Create sessions
-Pick topics to follow
-Create boards
-Create pins
-View boards and their pins
-Follow Boards, Users, Topics
-Search for topics/tags
-View a feed of followed items
-Create comments on pins
+- Create accounts
+- Create sessions
+- Pick topics to follow
+- Create boards
+- Create pins
+- View boards and their pins
+- Follow Boards, Users, Topics
+- Search for topics/tags
+- View a feed of followed items
+- Create comments on pins
 
 (i have wireframes in my notebook)
 
@@ -48,22 +48,22 @@ Root:
               string: session_token
 ```
 
-  has many boards
-  has many pins through boards
-  has many followers
-  has many followed_topics (tags)
-  has many followed_boards (boards)
-  has many followed_pinners (users)
+  * has many boards
+  * has many pins through boards
+  * has many followers
+  * has many followed_topics (tags)
+  * has many followed_boards (boards)
+  * has many followed_pinners (users)
 
 
-  Users can sign up
-  Users can sign in (create session)
-  Users can sign out (destroy session)
-  Users can CRUD boards
-  Users can CRUD pins
-  Users can be followed
-  Users can follow boards
-  Users can follow categories
+  * Users can sign up
+  * Users can sign in (create session)
+  * Users can sign out (destroy session)
+  * Users can CRUD boards
+  * Users can CRUD pins
+  * Users can be followed
+  * Users can follow boards
+  * Users can follow categories
 
 
 ### Boards:
@@ -76,14 +76,14 @@ Root:
             integer: collaborator_id (user)
             boolean: secret
 ```
-  is taggable
-  belongs to user
-  has many pins
-  has many tags
+  * is taggable
+  * belongs to user
+  * has many pins
+  * has many tags
 
-  Boards can be pinned to
-  Boards can be secret (private/invitation to view)
-  Boards can be followed
+  * Boards can be pinned to
+  * Boards can be secret (private/invitation to view)
+  * Boards can be followed
 
 
 ### Pin
@@ -98,12 +98,12 @@ Root:
             string : image_alt
             integer: via_user_id (user)
 ```
-  belongs to user
-  belongs to board
-  has many comments
+  * belongs to user
+  * belongs to board
+  * has many comments
 
-  Pins are pinned to boards
-  Pins have an image
+  * Pins are pinned to boards
+  * Pins have an image
 
 ### Comment
 ```
@@ -112,15 +112,16 @@ Root:
             text   : body
             integer: pin_id
 ```
-  belongs to user
-  belongs to pin
+  * belongs to user
+  * belongs to pin
 
 ### Tags/Category
 ```
             DB:
             string: name
 ```
-  belongs to board
+  * belongs to board
+  * belongs to pin
 
-  Tags can be searched by.
-  Tags can be followed
+  * Tags can be searched by.
+  * Tags can be followed
