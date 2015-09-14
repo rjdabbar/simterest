@@ -16,16 +16,21 @@ Mimimum Project:
 (i have wireframes in my notebook)
 
 
-## Day 1: Users/Session control, Board Creation
-  users can sign up and in, see their profile page, and create boards
+## Phase 1 (~1day): Users/Session control, Board Creation
+  Using a rails backend to control sessions and user auth I'll build a simple sign in/sign up app that allows users to create boards for their sims! I'll get this simple CRUD app running on heroku so that moving forward I can test things there. 
 
-## Day 2-3: Pin creation and assignment
-  users can manage their boards and pins through CRUD actions
+## Phase 2 (~2 days): Pin creation and assignment
+  During this phase I'll start working on Backbone models and collections with API routes to get everything working on the frontend. After this phase users should be able to view their boards with pins on them
 
-## Day 4-5: Concerns: Tagable and Searchable
-  pins and boards are tagable and searchable
+## Phase 3 (~2-3 days): Concerns: Tagable, Searchable, Followable
+  This phase will be concerned with concerns. Making sure boards/pins/topics are searchable, taggable and followable will increase the functionality of the app and streamline user experience. I'll need to do some good work on the model side to make sure these funtions works properly. 
 
-## Day 6: 
+## Phase 4: (~2 days) Comments
+  Adding comments to pins is one of the bigger social features of the app. Pins should be viewed in modal windows at this stage and comments will flow beneath the image. 
+
+## Phase 5 (~1-2 days): Styling
+ Along the way I plan to implement simple styling, mostly layout features, saving the specifics until I have most of the bigger moving parts in place. This phase will consist of cleaning up the CSS and making sure the app looks as clean as possible. 
+
 
 Models
   Users
