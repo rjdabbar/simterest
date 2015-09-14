@@ -32,18 +32,14 @@ Mimimum Project:
  Along the way I plan to implement simple styling, mostly layout features, saving the specifics until I have most of the bigger moving parts in place. This phase will consist of cleaning up the CSS and making sure the app looks as clean as possible. 
 
 
-Models
-  Users
-  Boards
-  Pins
-  Tags
-  Comments
+## Models
+  * Users
+  * Boards
+  * Pins
+  * Tags
+  * Comments
 
 
-
-Root:
-
-  displays all follows pins
 
 ## Users:
 ```
