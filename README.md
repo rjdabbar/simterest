@@ -1,5 +1,21 @@
 # Simterest -- simulate your interests!
 
+Mimimum Project: 
+
+Create accounts
+Create sessions
+Pick topics to follow
+Create boards
+Create pins
+View boards and their pins
+Follow Boards, Users, Topics
+Search for topics/tags
+View a feed of followed items
+Create comments on pins
+
+(i have wireframes in my notebook)
+
+
 ## Day 1: Users/Session control, Board Creation
   users can sign up and in, see their profile page, and create boards
 
@@ -8,6 +24,8 @@
 
 ## Day 4-5: Concerns: Tagable and Searchable
   pins and boards are tagable and searchable
+
+## Day 6: 
 
 Models
   Users
@@ -73,11 +91,12 @@ Root:
             DB:
             string : title
             text   : description
+            integer: pinner_id (user)
             integer: board_id
             string : image_url
             string : source_url
             string : image_alt
-            integer: via_user_id
+            integer: via_user_id (user)
 ```
   belongs to user
   belongs to board
