@@ -40,22 +40,21 @@ Root:
 
   displays all follows pins
 
-### Users:
+## Users:
 ```
               DB:
               string: username
               string: password_digest
               string: session_token
 ```
-
+### User associations
   * has many boards
   * has many pins through boards
   * has many followers
   * has many followed_topics (tags)
   * has many followed_boards (boards)
   * has many followed_pinners (users)
-
-
+### User funtionality
   * Users can sign up
   * Users can sign in (create session)
   * Users can sign out (destroy session)
