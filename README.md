@@ -50,6 +50,7 @@ Mimimum Project:
 ```
 ### User Associations
   * has many boards
+  * has many collaborated_boards (board)
   * has many pins through boards
   * has many followers
   * has many followed_topics (tags)
@@ -65,6 +66,7 @@ Mimimum Project:
   * Users can be followed
   * Users can follow boards
   * Users can follow categories
+  * Users can collaborate on boards
 
 
 ## Boards:
@@ -74,7 +76,6 @@ Mimimum Project:
             text   : description
             string : category
             integer: creator_id (user)
-            integer: collaborator_id (user)
             boolean: secret
 ```
 ### Board Associations
