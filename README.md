@@ -133,6 +133,7 @@ Mimimum Project:
 ### Tag Associations
   * belongs to board
   * belongs to pin
+  
 ### Tag Functionality
   * Tags can be searched by.
   * Tags can be followed
