@@ -13,7 +13,7 @@ Mimimum Project:
 - View a feed of followed items
 - Create comments on pins
 
-(i have wireframes in my notebook)
+[Wireframes](http://imgur.com/a/CPUkg)
 
 
 ## Phase 1 (~1day): Users/Session control, Board Creation
@@ -138,3 +138,15 @@ Mimimum Project:
   * Tags can be searched by.
   * Tags can be followed
   * Tags can be put on boards and pins
+
+## Follows
+```
+          DB: 
+          integer: follower_id (user)
+          integer: followee_id (board/tag/user) (polymorphic)
+```
+### Follow Associations
+  * Follows belong to users
+
+### Follow Functionality
+  * Follows are for boards, users, and tags
