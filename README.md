@@ -1,3 +1,14 @@
+# Simterest -- simulate your interests!
+
+## Day 1: Users/Session control, Board Creation
+  users can sign up and in, see their profile page, and create boards
+
+## Day 2-3: Pin creation and assignment
+  users can manage their boards and pins through CRUD actions
+
+## Day 4-5: Concerns: Tagable and Searchable
+  pins and boards are tagable and searchable
+
 Models
   Users
   Boards
@@ -5,13 +16,13 @@ Models
   Tags
   Comments
 
-Simterest -- simulate your interests!
+
 
 Root:
 
   displays all follows pins
 
-Users:
+### Users:
 ```
               DB:
               string: username
@@ -37,7 +48,7 @@ Users:
   Users can follow categories
 
 
-Boards:
+### Boards:
 ```
             DB:
             string : title
@@ -57,7 +68,7 @@ Boards:
   Boards can be followed
 
 
-Pin
+### Pin
 ```
             DB:
             string : title
@@ -75,7 +86,7 @@ Pin
   Pins are pinned to boards
   Pins have an image
 
-  Comment
+### Comment
 ```
             DB:
             integer: author_id (user)
@@ -85,7 +96,7 @@ Pin
   belongs to user
   belongs to pin
 
-  Tags/Category
+### Tags/Category
 ```
             DB:
             string: name
