@@ -2,19 +2,22 @@ Models
   Users
   Boards
   Pins
+  Tags
+  Comments
 
-
-Pintrest
+Simterest -- simulate your interests!
 
 Root:
 
   displays all follows pins
 
 Users:
+```
               DB:
               string: username
               string: password_digest
               string: session_token
+```
 
   has many boards
   has many pins through boards
@@ -35,7 +38,7 @@ Users:
 
 
 Boards:
-
+```
             DB:
             string : title
             text   : description
@@ -43,6 +46,7 @@ Boards:
             integer: creator_id (user)
             integer: collaborator_id (user)
             boolean: secret
+```
   is taggable
   belongs to user
   has many pins
@@ -54,6 +58,7 @@ Boards:
 
 
 Pin
+```
             DB:
             string : title
             text   : description
@@ -62,7 +67,7 @@ Pin
             string : source_url
             string : image_alt
             integer: via_user_id
-
+```
   belongs to user
   belongs to board
   has many comments
@@ -71,18 +76,20 @@ Pin
   Pins have an image
 
   Comment
+```
             DB:
             integer: author_id (user)
             text   : body
             integer: pin_id
-
+```
   belongs to user
   belongs to pin
 
   Tags/Category
+```
             DB:
             string: name
-
+```
   belongs to board
 
   Tags can be searched by.
