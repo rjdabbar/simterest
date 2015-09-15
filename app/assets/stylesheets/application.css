@@ -14,7 +14,8 @@
  *= require_self
  */
 
-html, body, h1, h2, h3, p, div, ul, li, button, a, section, nav, main {
+html, body, h1, h2, h3, p, div,
+ul, li, button, a, section, nav, main, input, textarea {
   border: 0;
   margin: 0;
   padding: 0;
@@ -28,6 +29,23 @@ html, body, h1, h2, h3, p, div, ul, li, button, a, section, nav, main {
 
 ul {
   list-style: none;
+}
+
+input {
+  background: #f3f3f3;
+}
+
+input:focus {
+  background: #fff;
+}
+
+textarea {
+  background: #f3f3f3;
+  resize: vertical;
+}
+
+textarea:focus {
+  background: #fff;
 }
 
 .group:after {
@@ -77,7 +95,7 @@ div.screen {
 div.modal {
   display: block;
   z-index: 2;
-  background: #edeff0;
+  background: #fff;
   width: 500px;
   margin: 20% 30%;
   position: fixed;

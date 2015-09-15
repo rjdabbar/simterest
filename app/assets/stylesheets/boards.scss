@@ -70,6 +70,25 @@ form.board > button {
   border: 1px solid #aaa;
 }
 
+ul.form-list > li {
+  border-top: 1px solid #ccc;
+  width: 100%;
+  padding: 20px 0;
+  vertical-align: middle;
+  display: block;
+}
+
+ul.form-list > li > h3 {
+  width: 130px;
+  margin: 0;
+  float: left;
+}
+
+ul.form-list > li > div {
+  margin-left: 140px;
+  display: block;
+}
+
 form.board > button:hover {
   cursor: pointer;
 }

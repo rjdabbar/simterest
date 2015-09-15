@@ -8,27 +8,43 @@
       <h2>Create a board</h2>
     <%  } %>
     <form class="board" method="post">
-    <ul>
-      <label for="board_title">Title:</label>
-      <input id="board_title"
-             type="text"
-             name="board[title]"
-             value="<%= board.escape("title") %>">
-      <label for="board_description">Description:</label>
-      <textarea id="board_description"
-                name="board[description]"
-                rows="8" cols="40"><%= board.escape("description") %></textarea>
-      <label for="board_category">Category:</label>
-      <select id="board_category" name="board[category]">
-        <% Simterest.Globals.boardCategories.forEach(function(category) { %>
-          <option value="<%= category %>"><%= category %></option>
-        <%  }); %>
-      </select>
-      <label for="board_secret">Secret Board:</label>
-      <input id="board_secret"
-             type="checkbox"
-             name="board[secret]"
-             value="true">
+    <ul class="form-list">
+      <li>
+        <h3><label for="board_title">Title:</label></h3>
+        <div>
+          <input id="board_title"
+                 type="text"
+                 name="board[title]"
+                 value="<%= board.escape("title") %>">
+        </div>
+      </li>
+      <li>
+        <h3><label for="board_description">Description:</label></h3>
+        <div>
+          <textarea id="board_description"
+                    name="board[description]"
+                    rows="8" cols="40"><%= board.escape("description") %></textarea>
+        </div>
+      </li>
+      <li>
+        <h3><label for="board_category">Category:</label></h3>
+        <div>
+          <select id="board_category" name="board[category]">
+            <% Simterest.Globals.boardCategories.forEach(function(category) { %>
+              <option value="<%= category %>"><%= category %></option>
+            <%  }); %>
+          </select>
+        </div>
+      </li>
+      <li>
+        <h3><label for="board_secret">Secret Board:</label></h3>
+        <div>
+          <input id="board_secret"
+                 type="checkbox"
+                 name="board[secret]"
+                 value="true">
+        </div>
+      </li>
     </ul>
       <% if(board.id) { %>
         <button class="delete">Delete Board</button>
