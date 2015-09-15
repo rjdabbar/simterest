@@ -22,13 +22,13 @@ Simterest.Views.BoardIndex = Backbone.CompositeView.extend({
       var view = new Simterest.Views.BoardIndexItem({
         model: board
       });
-      this.addSubview("ul.board-index", view, true);
+      this.addSubview("ul.public-board-index", view, true);
     }.bind(this))
   },
 
   addNewBoard: function () {
     var view = new Simterest.Views.BoardNewItem();
-    this.addSubview("ul.board-index", view, true)
+    this.addSubview("ul.public-board-index", view, true)
   },
 
   newBoardModal: function (e) {

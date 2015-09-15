@@ -1,6 +1,6 @@
 Simterest.Views.UserShow = Backbone.CompositeView.extend({
   template: JST["users/user_show"],
-  className: "user-show",
+  className: "content",
 
   events: {
     "click div.screen": "closeModal"

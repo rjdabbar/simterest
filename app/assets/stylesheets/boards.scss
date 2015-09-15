@@ -1,3 +1,51 @@
 // Place all the styles related to the boards controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+ul.public-board-index {
+  width: 100%;
+  background: #eee;
+  padding: 20px 30px 40px 30px;
+}
+
+li.new-board {
+  height: 277px;
+}
+
+li.board {
+  position: relative;
+  width: 215px;
+  padding: 5px;
+  border-radius: 5px;
+  float: left;
+  margin: 0 5px;
+  background: white;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);
+}
+
+li.board:hover {
+  cursor: pointer;
+}
+
+li.board:hover .overlay-light {
+  opacity: .2;
+}
+
+div.large-pin > img {
+  width: 215px;
+  height: 145px;
+  border-radius: 3px;
+}
+
+div.pin-thumbs > img {
+  width: 69px;
+  height: 69px;
+  border-radius: 3px;
+}
+
+li.board > button.edit {
+  width: 100%;
+  text-align: center;
+  background: #ccc;
+  padding: 10px 0;
+}

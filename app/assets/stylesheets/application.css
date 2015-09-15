@@ -36,6 +36,18 @@ ul {
   display: block;
 }
 
+.overlay-light {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: white;
+  opacity: 0;
+  transition: opacity .25s;
+}
+
 div.screen {
   position: fixed;
   top: 0;
@@ -57,3 +69,8 @@ div.modal {
   border-radius: 3px;
   padding: 10px;
 }
+
+/*div.content {
+  width: 75%;
+  margin: 0 auto;
+}*/
