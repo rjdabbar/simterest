@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150915133504) do
+ActiveRecord::Schema.define(version: 20150915141851) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "boards", force: :cascade do |t|
+    t.string   "title",       null: false
+    t.text     "description"
+    t.string   "category"
+    t.integer  "creator_id",  null: false
+    t.boolean  "secret"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "boards", ["creator_id"], name: "index_boards_on_creator_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
