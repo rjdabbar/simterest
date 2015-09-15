@@ -4,7 +4,10 @@ window.Simterest = {
   Views: {},
   Routers: {},
   initialize: function() {
-    
+    new Simterest.Routers.Router({
+      $rootEl: $("appContent")
+    });
+    Backbone.history.start();
   }
 };
 
