@@ -1,0 +1,24 @@
+<div class="screen">
+</div>
+<div class="modal">
+  <form class="board" action="index.html" method="post">
+    <label for="board_title">Title:</label>
+    <input id="board_title"
+           type="text"
+           name="board[title]"
+           value="<%= board.escape("title") %>">
+    <label for="board_description">Description:</label>
+    <textarea id="board_description"
+              name="board[description]"
+              rows="8" cols="40"><%= board.escape("description") %></textarea>
+    <label for="board_category">Category:</label>
+    <!-- <select id="board_category" name="">
+      OPTIONS, LIKE LOTS OF THEM
+    </select> -->
+    <label for="board_secret">Secret Board:</label>
+    <input id="board_secret"
+           type="checkbox"
+           name="board[secret]"
+           value="">
+  </form>
+</div>

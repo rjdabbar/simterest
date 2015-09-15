@@ -35,3 +35,25 @@ ul {
   clear: both;
   display: block;
 }
+
+div.screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background: black;
+  opacity: .4;
+}
+
+div.modal {
+  display: block;
+  background: #edeff0;
+  width: 500px;
+  margin: 50px auto;
+  position: absolute;
+  overflow: hidden;
+  border-radius: 3px;
+  padding: 10px;
+}

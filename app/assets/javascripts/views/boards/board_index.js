@@ -2,6 +2,10 @@ Simterest.Views.BoardIndex = Backbone.CompositeView.extend({
   template: JST["boards/board_index"],
   className: "boards",
 
+  events: {
+    "click li.new-board": "newBoardModal"
+  },
+
   initialize: function () {
     this.listenTo(this.collection, "sync add remove", this.render);
   },
@@ -25,5 +29,15 @@ Simterest.Views.BoardIndex = Backbone.CompositeView.extend({
   addNewBoard: function () {
     var view = new Simterest.Views.BoardNewItem();
     this.addSubview("ul.board-index", view, true)
+  },
+
+  newBoardModal: function (e) {
+    e.preventDefault();
+    var board = new Simterest.Models.Board();
+    var view = new Simterest.Views.BoardForm({
+      collection: this.collection,
+      model: board
+    });
+    this.collection.trigger("modal", view)
   }
 })

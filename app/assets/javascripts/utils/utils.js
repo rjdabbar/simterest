@@ -14,4 +14,12 @@ Backbone.Collection.prototype.getOrFetch = function (id) {
   };
 
   return model;
-}
+};
+
+Backbone.View.prototype.setModal = function (view) {
+  this._modal = view;
+};
+
+Backbone.View.prototype.modal = function () {
+  return this._modal;
+};
