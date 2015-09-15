@@ -15,27 +15,4 @@ class UsersController < ApplicationController
     end
   end
 
-  def index
-    @users = User.all
-    render :index
-  end
-
-  def edit
-    @user = User.find(params[:id])
-  end
-
-  def update
-    @user = User.find(params[:id])
-    if @user.update(user_params)
-      redirect_to root_url
-    else
-      render :edit
-    end
-  end
-
-  def destroy
-    @user = User.find(params[:id])
-    @user.destroy!
-    redirect_to new_users_url
-  end
 end
