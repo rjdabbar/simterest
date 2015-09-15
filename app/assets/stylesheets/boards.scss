@@ -52,4 +52,36 @@ li.board > button.edit {
   text-align: center;
   background: #ccc;
   padding: 10px 0;
+  border-radius: 3px;
+  background: linear-gradient(#fff, #f0f0f0);
+  border: 1px solid #ccc;
+}
+
+li.board > button.edit:hover {
+  cursor: pointer;
+}
+
+form.board > button {
+  padding: 5px 15px;
+  margin-left: 5px;
+  border-radius: 3px;
+  border: 1px solid #aaa;
+}
+
+form.board > button:hover {
+  cursor: pointer;
+}
+
+form.board > button.submit {
+  background: red;
+  color: white;
+  float: right;
+}
+
+form.board > button.delete {
+
+}
+
+form.board > button.cancel {
+  float: right;
 }

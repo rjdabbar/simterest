@@ -8,7 +8,6 @@ Simterest.Views.UserShow = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
-    this.listenTo(this.model.boards(), "add remove", this.render)
     this.listenTo(this.model.boards(), "modal", this.boardModal);
   },
 
@@ -26,7 +25,7 @@ Simterest.Views.UserShow = Backbone.CompositeView.extend({
   },
 
   boardModal: function (view) {
-    this.addSubview(".content-wrapper", view)
+    this.addSubview(".content-wrapper", view, true)
     this.setModal(view);
   },
 
