@@ -14,5 +14,6 @@ Simterest.Models.User = Backbone.Model.extend({
       delete payload.boards;
     };
     return payload;
+    
   }
 })
