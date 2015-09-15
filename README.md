@@ -1,6 +1,6 @@
 # Simterest -- simulate your interests!
 
-Mimimum Project: 
+Mimimum Project:
 
 - Create accounts
 - Create sessions
@@ -17,19 +17,19 @@ Mimimum Project:
 
 
 ## Phase 1 (~1day): Users/Session control, Board Creation
-  Using a rails backend to control sessions and user auth I'll build a simple sign in/sign up app that allows users to create boards for their sims! I'll get this simple CRUD app running on heroku so that moving forward I can test things there. 
+  Using a rails backend to control sessions and user auth I'll build a simple sign in/sign up app that allows users to create boards for their sims! I'll get this simple CRUD app running on heroku so that moving forward I can test things there.
 
 ## Phase 2 (~2 days): Pin creation and assignment
   During this phase I'll start working on Backbone models and collections with API routes to get everything working on the frontend. After this phase users should be able to view their boards with pins on them
 
 ## Phase 3 (~2-3 days): Concerns: Tagable, Searchable, Followable
-  This phase will be concerned with concerns. Making sure boards/pins/topics are searchable, taggable and followable will increase the functionality of the app and streamline user experience. I'll need to do some good work on the model side to make sure these funtions works properly. 
+  This phase will be concerned with concerns. Making sure boards/pins/topics are searchable, taggable and followable will increase the functionality of the app and streamline user experience. I'll need to do some good work on the model side to make sure these funtions works properly.
 
 ## Phase 4: (~2 days) Comments
-  Adding comments to pins is one of the bigger social features of the app. Pins should be viewed in modal windows at this stage and comments will flow beneath the image. 
+  Adding comments to pins is one of the bigger social features of the app. Pins should be viewed in modal windows at this stage and comments will flow beneath the image.
 
 ## Phase 5 (~1-2 days): Styling
- Along the way I plan to implement simple styling, mostly layout features, saving the specifics until I have most of the bigger moving parts in place. This phase will consist of cleaning up the CSS and making sure the app looks as clean as possible. 
+ Along the way I plan to implement simple styling, mostly layout features, saving the specifics until I have most of the bigger moving parts in place. This phase will consist of cleaning up the CSS and making sure the app looks as clean as possible.
 
 
 ## Models
@@ -56,7 +56,7 @@ Mimimum Project:
   * has many followed_topics (tags)
   * has many followed_boards (boards)
   * has many followed_pinners (users)
-  
+
 ### User Funtionality
   * Users can sign up
   * Users can sign in (create session)
@@ -83,7 +83,7 @@ Mimimum Project:
   * belongs to user
   * has many pins
   * has many tags
-  
+
 ### Board Functionality
   * Boards can be pinned to
   * Boards can be secret (private/invitation to view)
@@ -134,7 +134,7 @@ Mimimum Project:
 ### Tag Associations
   * belongs to board
   * belongs to pin
-  
+
 ### Tag Functionality
   * Tags can be searched by.
   * Tags can be followed
@@ -142,7 +142,7 @@ Mimimum Project:
 
 ## Follows
 ```
-          DB: 
+          DB:
           integer: follower_id (user)
           integer: followee_id (board/tag/user) (polymorphic)
 ```
