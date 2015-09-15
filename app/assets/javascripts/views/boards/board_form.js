@@ -18,6 +18,11 @@ Simterest.Views.BoardForm = Backbone.View.extend({
   submit: function (e) {
     e.preventDefault();
     var data = $(e.currentTarget).serializeJSON();
-    debugger
+    var board = this.model
+    board.save(data.board, {
+      success: function (model, response, options) {
+        this.collection.add(board)
+      }.bind(this)
+    })
   }
 })
