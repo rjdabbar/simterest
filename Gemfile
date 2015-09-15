@@ -1,13 +1,18 @@
 source 'https://rubygems.org'
 
 
-
+# rails
 gem 'rails', '4.2.3'
+# pg for db
 gem 'pg'
+
+# default styling things
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
+# bcrypt for auth
 gem 'bcrypt'
+# js magic
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'backbone-on-rails'
