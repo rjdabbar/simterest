@@ -3,6 +3,7 @@ window.Simterest = {
   Collections: {},
   Views: {},
   Routers: {},
+  Globals: {},
   initialize: function() {
     Simterest.Collections.users = new Simterest.Collections.Users();
     new Simterest.Routers.Router({

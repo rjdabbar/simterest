@@ -12,9 +12,11 @@
               name="board[description]"
               rows="8" cols="40"><%= board.escape("description") %></textarea>
     <label for="board_category">Category:</label>
-    <!-- <select id="board_category" name="">
-      OPTIONS, LIKE LOTS OF THEM
-    </select> -->
+    <select id="board_category" name="board[category]">
+      <% Simterest.Globals.boardCategories.forEach(function(category) { %>
+        <option value="<%= category %>"><%= category %></option>
+      <%  }); %>
+    </select>
     <label for="board_secret">Secret Board:</label>
     <input id="board_secret"
            type="checkbox"
