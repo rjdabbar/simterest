@@ -4,5 +4,5 @@ class Board < ActiveRecord::Base
 
   belongs_to :creator,
     foreign_key: :creator_id,
-    class: "User"
+    class_name: "User"
 end
