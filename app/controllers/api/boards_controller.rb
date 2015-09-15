@@ -6,14 +6,10 @@ class Api::BoardsController < ApplicationController
   def create
     @board = current_user.boards.new(board_params)
     if @board.save
-      render :show
+      render json: @board
     else
-      render :new
+      render json: @board.errors.full_messages, status: :unprocessable_entity
     end
-  end
-
-  def edit
-    @board = Board.find(params[:id])
   end
 
   def update
@@ -27,16 +23,18 @@ class Api::BoardsController < ApplicationController
 
   def show
     @board = Board.find(params[:id])
+    render :show
   end
 
   def index
-    @boards = Board.all
+    @boards = current_user.boards
+    render json: @boards
   end
 
   def destroy
-    @board = Board.find(params[:id])
+    @board = current_user.boards.find(params[:id])
     @board.destroy!
-    render :index
+    render json: {}
   end
 
   private
