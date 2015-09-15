@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require underscore
 //= require backbone
-//= require simterest_master
+//= require simterest
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections
