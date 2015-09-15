@@ -9,6 +9,7 @@ Simterest.Views.BoardIndex = Backbone.CompositeView.extend({
   render: function () {
     this.$el.html(this.template())
     this.addBoards();
+    this.addNewBoard();
     return this;
   },
 
@@ -19,5 +20,10 @@ Simterest.Views.BoardIndex = Backbone.CompositeView.extend({
       });
       this.addSubview("ul.board-index", view);
     }.bind(this))
+  },
+
+  addNewBoard: function () {
+    var view = new Simterest.Views.BoardNewItem();
+    this.addSubview("ul.board-index", view, true)
   }
 })
