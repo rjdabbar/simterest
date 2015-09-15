@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   attr_accessor :password
 
+  after_initialize :ensure_session_token
   def self.generate_secure_token
     SecureRandom.urlsafe_base64(16)
   end
