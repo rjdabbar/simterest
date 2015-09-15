@@ -17,5 +17,7 @@ Simterest.Views.BoardForm = Backbone.View.extend({
 
   submit: function (e) {
     e.preventDefault();
+    var data = $(e.currentTarget).serializeJSON();
+    debugger
   }
 })

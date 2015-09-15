@@ -22,7 +22,7 @@ Simterest.Views.BoardIndex = Backbone.CompositeView.extend({
       var view = new Simterest.Views.BoardIndexItem({
         model: board
       });
-      this.addSubview("ul.board-index", view);
+      this.addSubview("ul.board-index", view, true);
     }.bind(this))
   },
 

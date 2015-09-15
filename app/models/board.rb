@@ -5,4 +5,13 @@ class Board < ActiveRecord::Base
   belongs_to :creator,
     foreign_key: :creator_id,
     class_name: "User"
+
+  after_initialize :default_boards_to_not_be_secret
+
+  private
+
+  def default_boards_to_not_be_secret
+    self.secret = false
+  end
+
 end

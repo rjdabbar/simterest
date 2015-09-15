@@ -1,4 +1,4 @@
-Simterest.Globals.boardCategories = ["Animals and Pets", "Architecutre", "Art",
+Simterest.Globals.boardCategories = ["What kind of board is it?", "Animals and Pets", "Architecutre", "Art",
 "Books", "Card and Motorcycles", "Celebrities", "Design", "DIY and Crafts",
 "Education", "Film", "Food and Drink", "Gardening", "Geek", "Hair and Beauty",
 "Health and Fitness", "History", "Holidays and Events", "Home decor", "Humor",
