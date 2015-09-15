@@ -7,6 +7,9 @@ class User < ActiveRecord::Base
   attr_accessor :password
 
   after_initialize :ensure_session_token
+
+  has_many :boards, foreign_key: :creator_id
+
   def self.generate_secure_token
     SecureRandom.urlsafe_base64(16)
   end
