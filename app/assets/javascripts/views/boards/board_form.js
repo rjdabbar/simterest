@@ -3,11 +3,12 @@ Simterest.Views.BoardForm = Backbone.View.extend({
   className: "board-form",
 
   events: {
-    "submit form" : "submit"
+    "submit form" : "submit",
+    "click button.cancel": "closeModal",
+    "click button.delete": "deleteBoard"
   },
 
   initialize: function () {
-
   },
 
   render: function () {
@@ -22,7 +23,19 @@ Simterest.Views.BoardForm = Backbone.View.extend({
     board.save(data.board, {
       success: function (model, response, options) {
         this.collection.add(board)
+        this.collection.trigger("closeModal")
       }.bind(this)
     })
+  },
+
+  closeModal: function (e) {
+    e.preventDefault();
+    this.collection.trigger("closeModal");
+  },
+
+  deleteBoard: function (e) {
+    e.preventDefault();
+    this.model.destroy();
+    this.collection.trigger("closeModal");
   }
 })

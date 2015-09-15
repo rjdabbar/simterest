@@ -20,7 +20,8 @@ Simterest.Views.BoardIndex = Backbone.CompositeView.extend({
   addBoards: function () {
     this.collection.each(function(board){
       var view = new Simterest.Views.BoardIndexItem({
-        model: board
+        model: board,
+        collection: this.collection
       });
       this.addSubview("ul.public-board-index", view, true);
     }.bind(this))
@@ -38,6 +39,6 @@ Simterest.Views.BoardIndex = Backbone.CompositeView.extend({
       collection: this.collection,
       model: board
     });
-    this.collection.trigger("modal", view)
+    this.collection.trigger("openModal", view)
   }
 })

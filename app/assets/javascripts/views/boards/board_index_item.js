@@ -23,6 +23,6 @@ Simterest.Views.BoardIndexItem = Backbone.View.extend({
       collection: this.collection,
       model: board
     });
-    this.model.trigger("modal", view)
+    this.model.trigger("openModal", view)
   }
 })
