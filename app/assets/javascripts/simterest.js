@@ -4,8 +4,10 @@ window.Simterest = {
   Views: {},
   Routers: {},
   initialize: function() {
+    Simterest.Collections.users = new Simterest.Collections.Users();
     new Simterest.Routers.Router({
-      $rootEl: $("appContent")
+      users: Simterest.Collections.users,
+      $rootEl: $(".appContent")
     });
     Backbone.history.start();
   }
