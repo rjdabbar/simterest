@@ -7,10 +7,21 @@ Simterest.Views.PinIndex = Backbone.CompositeView.extend({
   render: function () {
     this.$el.html(this.template());
     this.addPins();
+    this.addNewPin();
     return this;
   },
 
   addPins: function () {
-    // add all the pins
+    this.collection.each(function(pin) {
+      var view = new Simterest.Views.PinIndexItem({
+        model: pin
+      });
+      this.addSubview("SELECTOR", view, true)
+    }.bind(this))
+  },
+
+  addNewPin: function () {
+    var view = new Simterest.Views.PinNewItem()
+    this.addSubview("SELECTOR", view, true);
   }
 })
