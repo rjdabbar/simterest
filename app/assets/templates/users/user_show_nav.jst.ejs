@@ -1,11 +1,13 @@
 <ul class="user-nav">
   <li class="user-nav-item">
-    <div>
+    <div class="nav-boards">
+      <%= user.boards().count %>
       Boards
     </div>
   </li>
   <li class="user-nav-item">
-    <div>
+    <div class="nav-pins">
+      <%= user.pins().count %>
       Pins
     </div>
   </li>

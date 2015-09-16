@@ -14,8 +14,16 @@ Simterest.Views.UserShow = Backbone.CompositeView.extend({
 
   render: function () {
     this.$el.html(this.template({user: this.model}))
+    this.addNav();
     this.addBoardIndex();
     return this;
+  },
+
+  addNav: function () {
+    var userNav = new Simterest.Views.UserShowNav({
+      model: this.model
+    });
+    this.addSubview(".user-show", userNav);
   },
 
   addBoardIndex: function () {
