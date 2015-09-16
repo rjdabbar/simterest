@@ -22,6 +22,7 @@ class Api::BoardsController < ApplicationController
   end
 
   def show
+    # logic for seeing public boards only goes here
     @board = Board.find(params[:id])
     render :show
   end
