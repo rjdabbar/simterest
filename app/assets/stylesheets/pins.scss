@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+// *****************
+// PIN INDEX STYLING
+// *****************
 ul.pin-index {
   width: 100%;
   background: #eee;
@@ -52,3 +56,49 @@ li.pin:hover .overlay-light {
 li.pin:hover .overlay-dark {
   opacity: .2;
 }
+
+// *****************
+// PIN FORM STYLINGS
+// *****************
+
+// *****************
+// SOURCE FORM STYLINGS
+// *****************
+
+div.source-header {
+  border-bottom: 1px solid black;
+  font-size: 36px;
+  padding: 0 10px;
+}
+
+div.url-source, div.device-source {
+  text-align: center;
+  width: 250px;
+  height: 200px;
+}
+
+div.url-source {
+  float: left;
+  border-right: 1px solid #aaa;
+}
+
+div.url-source:hover {
+  cursor: pointer;
+}
+
+div.url-source, div.device-source > p {
+  font-size: 26px;
+}
+
+div.device-source {
+  margin-left: 250px;
+}
+
+div.device-source:hover {
+  cursor: pointer;
+}
+
+
+// *****************
+// URL FORM STYLINGS
+// *****************

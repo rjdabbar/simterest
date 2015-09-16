@@ -101,5 +101,5 @@ div.modal {
   position: fixed;
   text-align: left;
   border-radius: 3px;
-  padding: 10px;
+  /*padding: 10px;*/
 }
