@@ -1,5 +1,6 @@
 Simterest.Views.UserShowNav = Backbone.View.extend({
   template: JST["users/user_show_nav"],
+  tagName: "nav",
   className: "user-page-nav",
 
   events: {

@@ -2,15 +2,15 @@ Simterest.Models.User = Backbone.Model.extend({
   urlRoot: "api/users",
 
   boards: function () {
-    if (this._boards === undefined) {
+    if (typeof this._boards === "undefined") {
       this._boards = new Simterest.Collections.Boards([], {creator_id: this.id});
     };
     return this._boards;
   },
 
   pins: function () {
-    if (this._pins === undefined) {
-      this._pins = new Simterest.Collections.Pins([], {pinner_id: this.id});
+    if (typeof this._pins === "undefined") {
+      this._pins = new Simterest.Collections.Pins([], {pinner: this});
     };
     return this._pins
   },
@@ -20,6 +20,12 @@ Simterest.Models.User = Backbone.Model.extend({
       this.boards().set(payload.boards, { parse: true });
       delete payload.boards;
     };
+
+    if (payload.pins) {
+      this.pins().set(payload.pins, { parse: true });
+      delete payload.pins;
+    };
+
     return payload;
 
   }

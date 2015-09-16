@@ -3,10 +3,12 @@ Simterest.Views.PinIndexItem = Backbone.View.extend({
   tagName: "li",
   className: "pin",
 
-  initialize: function () {},
+  initialize: function () {
+    this.listenTo(this.model, "sync", this.render)
+  },
 
   render: function () {
-    this.$el.html(this.template());
+    this.$el.html(this.template({pin: this.model}));
     return this;
   }
 })

@@ -7,3 +7,19 @@ ul.pin-index {
   background: #eee;
   padding: 20px 30px 40px 30px;
 }
+
+
+li.pin {
+  position: relative;
+  width: 220px;
+  padding: 5px;
+  border-radius: 5px;
+  float: left;
+  margin: 0 5px;
+  background: white;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);
+}
+
+li.pin:hover {
+  cursor: pointer;
+}

@@ -2,7 +2,9 @@ Simterest.Views.PinIndex = Backbone.CompositeView.extend({
   template: JST["pins/pin_index"],
   className: "pins",
 
-  initialize: function () {},
+  initialize: function () {
+    this.listenTo(this.collection, "sync add remove", this.render)
+  },
 
   render: function () {
     this.$el.html(this.template());
@@ -16,12 +18,12 @@ Simterest.Views.PinIndex = Backbone.CompositeView.extend({
       var view = new Simterest.Views.PinIndexItem({
         model: pin
       });
-      this.addSubview("SELECTOR", view, true)
+      this.addSubview("ul.pin-index", view, true)
     }.bind(this))
   },
 
   addNewPin: function () {
     var view = new Simterest.Views.PinNewItem()
-    this.addSubview("SELECTOR", view, true);
+    this.addSubview("ul.pin-index", view, true);
   }
 })
