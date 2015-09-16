@@ -37,7 +37,6 @@ Simterest.Views.UserShow = Backbone.CompositeView.extend({
   },
 
   addPinIndex: function () {
-    console.log("SWAP");
     var pinIndex = new Simterest.Views.PinIndex({
       collection: this.model.pins()
     });
@@ -45,6 +44,7 @@ Simterest.Views.UserShow = Backbone.CompositeView.extend({
   },
 
   openModal: function (view) {
+    if (this.modal()) { this.closeModal(); };
     this.addSubview(".content-wrapper", view, true)
     this.setModal(view);
   },

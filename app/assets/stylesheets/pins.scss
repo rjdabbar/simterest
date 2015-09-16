@@ -71,6 +71,22 @@ div.source-header {
   padding: 0 10px;
 }
 
+div.source-header > button.close {
+  margin-left: 465px;
+  background: #fff;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: #ccc;
+  font-size: 18px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+div.source-header > button.close:hover {
+  cursor: pointer;
+}
+
 div.url-source, div.device-source {
   text-align: center;
   width: 250px;
@@ -102,3 +118,26 @@ div.device-source:hover {
 // *****************
 // URL FORM STYLINGS
 // *****************
+
+div.url-input {
+  padding: 20px 0;
+}
+
+div.url-input > input {
+  margin-left: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: left;
+  width: 400px;
+  height: 20px;
+  font-size: 16px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.12) inset
+}
+
+div.url-input > button.next {
+  margin-left: 30px;
+}
+
+div.url-input > button.next:hover {
+  cursor: pointer;
+}
