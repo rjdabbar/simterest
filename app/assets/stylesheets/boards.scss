@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// *******************
+// BOARD INDEX STYLING
+// *******************
+
 ul.public-board-index {
   width: 100%;
   background: #eee;
@@ -62,6 +66,10 @@ li.board > button.edit {
 li.board > button.edit:hover {
   cursor: pointer;
 }
+
+// *******************
+// BOARD FORM STYLING
+// *******************
 
 form.board > button {
   padding: 5px 15px;
