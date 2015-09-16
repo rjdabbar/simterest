@@ -1,9 +1,7 @@
 Simterest.Views.PinNewItem = Backbone.View.extend({
   template: JST["pins/pin_new_item"],
-  tagName: "li",
   className: "new-pin pin",
-
-  events: {},
+  tagName: "li",
 
   initialize: function () {},
 

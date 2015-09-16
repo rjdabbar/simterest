@@ -2,6 +2,10 @@ Simterest.Views.PinIndex = Backbone.CompositeView.extend({
   template: JST["pins/pin_index"],
   className: "pins",
 
+  events: {
+    "click li.new-pin": "newPinModal"
+  },
+
   initialize: function () {
     this.listenTo(this.collection, "sync add remove", this.render)
   },
@@ -25,5 +29,9 @@ Simterest.Views.PinIndex = Backbone.CompositeView.extend({
   addNewPin: function () {
     var view = new Simterest.Views.PinNewItem()
     this.addSubview("ul.pin-index", view, true);
+  },
+
+  newPinModal:function () {
+    
   }
 })
