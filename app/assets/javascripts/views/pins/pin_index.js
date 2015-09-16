@@ -31,7 +31,13 @@ Simterest.Views.PinIndex = Backbone.CompositeView.extend({
     this.addSubview("ul.pin-index", view, true);
   },
 
-  newPinModal:function () {
-    
+  newPinModal:function (e) {
+    e.preventDefault();
+    var pin = new Simterest.Models.Pin();
+    var view = new Simterest.Views.PinFormSource({
+      collection: this.collection,
+      model: pin
+    });
+    this.collection.trigger("openModal", view)
   }
 })
