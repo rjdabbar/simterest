@@ -22,7 +22,7 @@ Simterest.Views.UserShow = Backbone.CompositeView.extend({
     var boardIndex = new Simterest.Views.BoardIndex({
       collection: this.model.boards()
     });
-    this.addSubview(".user-show", boardIndex);
+    this.swapIndex(boardIndex);
   },
 
   boardModal: function (view) {
@@ -34,5 +34,10 @@ Simterest.Views.UserShow = Backbone.CompositeView.extend({
     this.removeSubview(".content-wrapper", this.modal());
   },
 
+  swapIndex: function (newIndex) {
+    this.currentIndex && this.removeSubview(".user-show", this.currentIndex);
+    this.currentIndex = newIndex;
+    this.addSubview(".user-show", newIndex);
+  }
 
 })
