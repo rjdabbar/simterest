@@ -1,4 +1,4 @@
-Simterest.Views.PinForm = Backbone.CompositeView.extend({
+Simterest.Views.PinForm = Backbone.View.extend({
   template: JST['pins/pin_form'],
   className: "pin-form",
 
