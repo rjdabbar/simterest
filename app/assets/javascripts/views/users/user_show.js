@@ -42,9 +42,9 @@ Simterest.Views.UserShow = Backbone.CompositeView.extend({
   },
 
   swapIndex: function (newIndex) {
-    this.currentIndex && this.removeSubview(".user-show", this.currentIndex);
+    this.currentIndex && this.removeSubview(".main-content", this.currentIndex);
     this.currentIndex = newIndex;
-    this.addSubview(".user-show", newIndex);
+    this.addSubview(".main-content", newIndex);
   }
 
 })
