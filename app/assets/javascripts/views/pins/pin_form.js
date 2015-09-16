@@ -3,7 +3,7 @@ Simterest.Views.PinForm = Backbone.CompositeView.extend({
   className: "pin-form",
 
   events: {
-
+    "click li.pin-board-item" : "submit"
   },
 
   initialize: function () {
@@ -29,6 +29,15 @@ Simterest.Views.PinForm = Backbone.CompositeView.extend({
 
   submit: function (e) {
     e.preventDefault();
+    var board_id = $(e.currentTarget).data("id");
+    var description = $("textarea#pin_description").val();
+    var pin = this.model
+    pin.set({board_id: board_id, description: description})
+    pin.save({}, {
+      success: function (model, response, options) {
+        this.collection.add(pin);
+      }.bind(this)
+    })
   }
 
 })

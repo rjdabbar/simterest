@@ -3,6 +3,12 @@ Simterest.Views.PinFormBoardListItem = Backbone.View.extend({
   tagName: "li",
   className: "pin-board-item",
 
+  attributes: function () {
+    return {
+      "data-id": this.model.id
+    }
+  },
+
   initialize: function () {},
 
   render: function () {
