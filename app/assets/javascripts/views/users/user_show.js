@@ -12,6 +12,7 @@ Simterest.Views.UserShow = Backbone.CompositeView.extend({
     this.listenTo(this.model.boards(), "openModal", this.openModal);
     this.listenTo(this.model.pins(), "openModal", this.openModal);
     this.listenTo(this.model.boards(), "closeModal", this.closeModal);
+    this.listenTo(this.model.pins(), "closeModal", this.closeModal);
     this.listenTo(this.model.boards(), "showBoards", this.addBoardIndex);
     this.listenTo(this.model.pins(), "showPins", this.addPinIndex);
   },

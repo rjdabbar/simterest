@@ -36,6 +36,7 @@ Simterest.Views.PinForm = Backbone.CompositeView.extend({
     pin.save({}, {
       success: function (model, response, options) {
         this.collection.add(pin);
+        this.collection.trigger("closeModal")
       }.bind(this)
     })
   }
