@@ -1,1 +1,6 @@
-json.array! @board
+json.extract! @board, :id, :title, :description, :category,
+                          :creator_id, :secret, :created_at, :updated_at
+json.pins @board.pins do |pin|
+  json.extract! pin, :id, :pinner_id, :title, :description, :image_url,
+            :image_alt, :source_url, :via_user_id, :created_at, :updated_at
+end

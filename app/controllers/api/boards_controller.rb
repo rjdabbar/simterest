@@ -17,7 +17,7 @@ class Api::BoardsController < ApplicationController
     if @board.update(board_params)
       render :show
     else
-      render :edit
+      render json: @board.errors.full_messages, status: :unprocessable_entity
     end
   end
 
