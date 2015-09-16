@@ -37,7 +37,7 @@ class Api::BoardsController < ApplicationController
     @board.destroy!
     render json: {}
   end
-
+  
   private
 
   def board_params
