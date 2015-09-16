@@ -10,7 +10,8 @@ Simterest.Views.UserShowNav = Backbone.View.extend({
   },
 
   initialize: function () {
-
+    this.listenTo(this.model.boards(), "add remove", this.render);
+    this.listenTo(this.model.pins(), "add remove", this.render);
   },
 
   render: function () {

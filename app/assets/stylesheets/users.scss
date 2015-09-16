@@ -6,3 +6,28 @@ div.user-show {
   width: 100%;
   text-align: center;
 }
+
+nav.user-page-nav {
+  width: 50%;
+  margin: 200px auto 0 auto;
+}
+
+ul.user-nav {
+
+}
+
+li.user-nav-item {
+  float: left;
+  padding: 10px;
+  margin-left: 35px;
+
+}
+
+li.user-nav-item:hover {
+  color: red;
+  cursor: pointer;
+}
+
+li.user-nav-item:active {
+  color: red;
+}
