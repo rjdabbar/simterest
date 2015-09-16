@@ -14,15 +14,22 @@ Simterest.Views.UserShow = Backbone.CompositeView.extend({
 
   render: function () {
     this.$el.html(this.template({user: this.model}))
-    this.addBoards();
+    this.addBoardIndex();
     return this;
   },
 
-  addBoards: function () {
+  addBoardIndex: function () {
     var boardIndex = new Simterest.Views.BoardIndex({
       collection: this.model.boards()
     });
     this.swapIndex(boardIndex);
+  },
+
+  addPinIndex: function () {
+    var pinIndex = new Simterest.Views.PinIndex({
+      collection: this.model.pins()
+    });
+    this.swapIndex(pinIndex);
   },
 
   boardModal: function (view) {
