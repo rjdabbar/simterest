@@ -17,7 +17,6 @@ Simterest.Views.PinFormSource = Backbone.View.extend({
       model: this.model,
       collection: this.collection
     });
-    console.log("HI");
     this.collection.trigger("openModal", view)
   }
 })

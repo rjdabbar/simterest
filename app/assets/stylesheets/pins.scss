@@ -145,3 +145,37 @@ div.url-input > button.next:hover {
 // ************************
 // ACTUAL PIN FORM STYLINGS
 // ************************
+
+div.pin-image-holder {
+  width: 250px;
+  height: 400px;
+  float: left;
+  border-right: 1px solid #ccc;
+  background: #ddd
+}
+
+img.pin-image {
+  width: 200px;
+  background: green;
+  height: 100px;
+  margin: 50px 25px 0 25px;
+}
+
+div.pin-description-holder {
+ textarea {
+   width: 200px;
+   margin:0 25px;
+ }
+}
+
+div.pin-board-options {
+  margin-left: 250px;
+}
+
+div.pin-boards-top {
+
+}
+
+div.pin-boards {
+
+}

@@ -15,9 +15,8 @@ Simterest.Views.PinFormUrl = Backbone.View.extend({
   openForm: function (e) {
     e.preventDefault();
 
-    var data = $("input").serializeJSON();
+    var data = $("input.source-url-input").serializeJSON();
     this.model.set(data.pin)
-
     var view = new Simterest.Views.PinForm({
       model: this.model,
       collection: this.collection
