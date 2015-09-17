@@ -1,6 +1,6 @@
 # THIS IS THE ONLY FILE THAT WILL SERVE UP JSON FOR THE TIME
 # ADD TO THIS AS NEW MODELS ARE CREATED
-json.extract! @user, :id, :username
+json.extract! @user, :id, :username, :full_name, :description, :location
 json.avatar_url asset_path(@user.avatar.url)
 json.boards @user.boards do |board|
   json.extract! board, :id, :creator_id, :title, :description, :category,
