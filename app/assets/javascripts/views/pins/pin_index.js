@@ -3,7 +3,9 @@ Simterest.Views.PinIndex = Backbone.CompositeView.extend({
   className: "pins",
 
   events: {
-    "click li.new-pin": "newPinModal"
+    "click li.new-pin": "newPinModal",
+    "click button.pin-it": "pinForm",
+    "click button.edit-pin": "editPin"
   },
 
   initialize: function () {
@@ -39,5 +41,29 @@ Simterest.Views.PinIndex = Backbone.CompositeView.extend({
       model: pin
     });
     this.collection.trigger("openModal", view)
+  },
+
+  pinForm: function (e) {
+    e.preventDefault();
+    var pin = this.collection.getOrFetch(this._getPin($(e.currentTarget)));
+    var view = new Simterest.Views.PinForm({
+      model: pin
+    })
+    this.collection.trigger("openModal", view)
+  },
+
+  editPin: function (e) {
+    e.preventDefault();
+    var pin = this.collection.getOrFetch(this._getPin($(e.currentTarget)));
+    var view = new Simterest.Views.PinEditForm({
+      model: pin,
+      collection: this.collection
+    })
+    this.collection.trigger("openModal", view)
+  },
+
+
+  _getPin: function ($button) {
+    return $button.parent().parent().data("id");
   }
 })

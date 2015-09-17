@@ -9,7 +9,7 @@
         <div>
           <h3><label for="pin_board">Board</label></h3>
           <select class="pin_board" name="pin[board_id]">
-            <% board.forEach(function(board) { %>
+            <% boards.forEach(function(board) { %>
               <option value="<%= board.id %>"><%= board.escape("title") %></option>
             <%  }); %>
           </select>

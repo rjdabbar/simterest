@@ -9,10 +9,10 @@ Simterest.Views.PinEditForm = Backbone.View.extend({
   },
 
   initialize: function () {
-    this.listenTo(this.boards, "sync", this.render);
     this.listenTo(this.model, "sync", this.render);
     this.boards = new Simterest.Collections.Boards();
     this.boards.fetch();
+    this.listenTo(this.boards, "sync", this.render);
   },
 
   render: function () {

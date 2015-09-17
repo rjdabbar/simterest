@@ -51,6 +51,7 @@ button.edit-pin, button.pin-it {
   padding: 5px 10px;
   font-size: 14px;
   display: none;
+  z-index: 1;
 }
 
 li.pin:hover {
@@ -65,6 +66,10 @@ li.pin:hover button.edit-pin {
 li.pin:hover button.pin-it {
   left: 5px;
   display: block;
+}
+
+button.edit-pin:hover, button.pin-it:hover {
+  cursor: pointer;
 }
 
 li.pin:hover .overlay-light {

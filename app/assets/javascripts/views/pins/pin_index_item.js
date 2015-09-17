@@ -3,6 +3,12 @@ Simterest.Views.PinIndexItem = Backbone.View.extend({
   tagName: "li",
   className: "pin",
 
+  attributes: function () {
+    return {
+      "data-id": this.model.id
+    }
+  },
+
   events: {
 
   },
@@ -14,5 +20,7 @@ Simterest.Views.PinIndexItem = Backbone.View.extend({
   render: function () {
     this.$el.html(this.template({pin: this.model}));
     return this;
-  }
+  },
+
+
 })
