@@ -14,12 +14,27 @@ Simterest.Views.UserEditForm = Backbone.View.extend({
 
   updateProfile: function (e) {
     e.preventDefault();
-    var data = $("form.user").serializeJSON();
+    var data = this._gatherFormData();
     var user = this.model
-    user.save(data.user, {
+    user.saveFormData(data, {
       success: function (model, response, options) {
         this.model.trigger("closeModal")
       }.bind(this)
     })
+  },
+
+  _gatherFormData: function () {
+    var fullName = this.$("#user_full_name").val();
+    var avatar = this.$("#user_avatar")[0].files[0];
+    var username = this.$("#user_username").val();
+    var description = this.$("#user_description").val();
+    var location = this.$("#user_location").val();
+    var formData = new FormData();
+    formData.append("user[full_name]", fullName);
+    formData.append("user[avatar]", avatar);
+    formData.append("user[username]", username);
+    formData.append("user[description]", description);
+    formData.append("user[location]", location);
+    return formData;
   }
 })

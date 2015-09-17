@@ -16,7 +16,7 @@ Backbone.Collection.prototype.getOrFetch = function (id) {
   return model;
 };
 
-Backbone.Models.prototype.saveFormData = function (formData, options) {
+Backbone.Model.prototype.saveFormData = function (formData, options) {
   var method = this.isNew() ? "POST" : "PUT";
   var model = this;
 
@@ -35,7 +35,7 @@ Backbone.Models.prototype.saveFormData = function (formData, options) {
       options.error && options.error(model, resp, options);
     }
   });
-}
+};
 
 Backbone.View.prototype.setModal = function (view) {
   this._modal = view;
