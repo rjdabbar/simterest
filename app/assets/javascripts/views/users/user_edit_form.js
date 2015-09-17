@@ -14,6 +14,12 @@ Simterest.Views.UserEditForm = Backbone.View.extend({
 
   updateProfile: function (e) {
     e.preventDefault();
-    debugger
+    var data = $("form.user").serializeJSON();
+    var user = this.model
+    user.save(data.user, {
+      success: function (model, response, options) {
+        this.model.trigger("closeModal")
+      }.bind(this)
+    })
   }
 })

@@ -7,36 +7,49 @@
         <li>
           <div>
             <label for="user_full_name">Name</label>
-            <input id="user_full_name" type="text" name="user[full_name]">
+            <input id="user_full_name"
+                   type="text"
+                   name="user[full_name]"
+                   value="<%= user.escape("full_name") %>">
           </div>
         </li>
         <li>
           <div>
             <label for="user_avatar">Avatar</label>
-            <input id="user_avatar" type="file" name="user[avatar]">
+            <input id="user_avatar"
+                   type="file"
+                   name="user[avatar]">
           </div>
         </li>
         <li>
           <div>
             <label for="user_username">Username</label>
-            simterest.herokuapp.com/ <input id="user_username" type="text" name="user[username]">
+            simterest.herokuapp.com/ <input id="user_username"
+                                            type="text"
+                                            name="user[username]"
+                                            value="<%= user.escape("username") %>">
           </div>
         </li>
         <li>
           <div>
             <label for="user_description">About You</label>
-            <textarea id="user_description" name="user[description]" rows="8" cols="40"></textarea>
+            <textarea id="user_description"
+                      name="user[description]"
+                      rows="8" cols="40"><%= user.escape("description") %></textarea>
           </div>
         </li>
         <li>
           <div>
             <label for="user_location">Location</label>
-            <input id="user_location" type="text" name="user[location]">
+            <input id="user_location"
+                   type="text"
+                   name="user[location]"
+                   value="<%= user.escape("location") %>">
           </div>
         </li>
       </ul>
     </form>
     <button class="save">Save</button>
-    <button class="cancel">Cancel</button>
+    <button class="close">Cancel</button>
   </div>
 </div>

@@ -78,6 +78,7 @@ Simterest.Views.UserShow = Backbone.CompositeView.extend({
   },
 
   _bindCloseModalListeners: function () {
+    this.listenTo(this.model, "closeModal", this.closeModal);
     this.listenTo(this.model.boards(), "closeModal", this.closeModal);
     this.listenTo(this.model.pins(), "closeModal", this.closeModal);
   },
