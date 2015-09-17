@@ -6,7 +6,8 @@ Simterest.Views.PinForm = Backbone.CompositeView.extend({
     "click li.pin-board-item" : "submit"
   },
 
-  initialize: function () {
+  initialize: function (options) {
+    this.formData = options.formData
     this.boards = new Simterest.Collections.Boards();
     this.boards.fetch();
     this.listenTo(this.boards, "sync", this.render)
@@ -29,6 +30,25 @@ Simterest.Views.PinForm = Backbone.CompositeView.extend({
 
   submit: function (e) {
     e.preventDefault();
+    if (this.formData) {
+      this._submitWithUpload();
+    } else {
+      this._submitWithURL();
+    };
+  },
+
+  _submitWithUpload: function () {
+    this._updateFormData();
+    var pin = this.model;
+    pin.saveFormData(this.formData, {
+      success: function (model, response, options) {
+        this.collection.add(pin)
+        this.collection.trigger("closeModal")
+      }
+    })
+  },
+
+  _submitWithURL: function () {
     var board_id = $(e.currentTarget).data("id");
     var description = $("textarea#pin_description").val();
     var pin = this.model
@@ -39,6 +59,13 @@ Simterest.Views.PinForm = Backbone.CompositeView.extend({
         this.collection.trigger("closeModal")
       }.bind(this)
     })
+  },
+
+  _updateFormData: function () {
+    var board_id = $(e.currentTarget).data("id");
+    var description = $("textarea#pin_description").val();
+    this.formData.append("pin[board_id]", board_id);
+    this.formData.append("pin[description]", description);
   }
 
 })
