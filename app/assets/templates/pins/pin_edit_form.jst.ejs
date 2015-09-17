@@ -1,0 +1,41 @@
+<div class="screen">
+</div>
+<div class="modal">
+  <div class="modal-content">
+    <h3><strong>Edit this Pin</strong></h3>
+    <form class="pin" method="post">
+    <ul class="form-list">
+      <li>
+        <div>
+          <h3><label for="pin_board">Board</label></h3>
+          <select class="pin_board" name="pin[board_id]">
+            <% board.forEach(function(board) { %>
+              <option value="<%= board.id %>"><%= board.escape("title") %></option>
+            <%  }); %>
+          </select>
+        </div>
+      </li>
+      <li>
+        <h3><label for="pin_description">Description</label></h3>
+        <div>
+          <textarea id="pin_description"
+                    name="pin[description]"
+                    rows="8" cols="40"><%= pin.escape("description") %></textarea>
+        </div>
+      </li>
+      <li>
+        <h3><label for="pin_source">Website</label></h3>
+        <div>
+          <input id="pin_source"
+                 type="text"
+                 name="pin[source_url]"
+                 value="<%= pin.escape("source_url") %>">
+        </div>
+      </li>
+    </ul>
+        <button class="delete">Delete Pin</button>
+        <button class="save">Save</button>
+        <button class="cancel">Cancel</button>
+    </form>
+  </div>
+</div>
