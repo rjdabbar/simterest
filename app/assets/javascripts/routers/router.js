@@ -21,7 +21,7 @@ Simterest.Routers.Router = Backbone.Router.extend({
     this.swapView(view);
   },
 
-  boardIndex: function (userId, boardId) {
+  boardShow: function (userId, boardId) {
     var user = this.users.getOrFetch(userId);
     var board = user.boards().getOrFetch(boardId);
     var view = new Simterest.Views.BoardShow({

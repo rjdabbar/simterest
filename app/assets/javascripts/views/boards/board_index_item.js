@@ -1,7 +1,13 @@
 Simterest.Views.BoardIndexItem = Backbone.View.extend({
   template: JST["boards/board_index_item"],
   tagName: "li",
-  className: "board",
+  className: "board board-item",
+
+  attributes: function () {
+    return {
+      "data-id": this.model.id
+    }
+  },
 
   events: {
     "click button.edit": "openEditModal"
