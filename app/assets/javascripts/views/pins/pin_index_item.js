@@ -9,6 +9,7 @@ Simterest.Views.PinIndexItem = Backbone.View.extend({
 
   render: function () {
     this.$el.html(this.template({pin: this.model}));
+    debugger
     return this;
   }
 })
