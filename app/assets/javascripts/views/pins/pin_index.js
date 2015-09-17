@@ -47,7 +47,8 @@ Simterest.Views.PinIndex = Backbone.CompositeView.extend({
     e.preventDefault();
     var pin = this.collection.getOrFetch(this._getPin($(e.currentTarget)));
     var view = new Simterest.Views.PinForm({
-      model: pin
+      model: pin,
+      collection: this.collection
     })
     this.collection.trigger("openModal", view)
   },

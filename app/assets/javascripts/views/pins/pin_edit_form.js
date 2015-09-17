@@ -25,6 +25,13 @@ Simterest.Views.PinEditForm = Backbone.View.extend({
 
   submit: function (e) {
     e.preventDefault();
+    var data = $("form.pin").serializeJSON();
+    var pin = this.model;
+    pin.save(data.pin, {
+      success: function (model, response, options) {
+        this.collection.trigger("closeModal");
+      }.bind(this)
+    })
   },
 
   destroyPin: function (e) {
