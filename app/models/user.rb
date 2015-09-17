@@ -7,11 +7,11 @@ class User < ActiveRecord::Base
   attr_accessor :password
 
   after_initialize :ensure_session_token
-  has_attached_file :avatar
-  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
   has_many :boards, foreign_key: :creator_id
   has_many :pins, foreign_key: :pinner_id
   has_many :shared_pins, foreign_key: :via_user_id, class_name: "Pin"
+  has_attached_file :avatar
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
   def self.generate_secure_token
     SecureRandom.urlsafe_base64(16)

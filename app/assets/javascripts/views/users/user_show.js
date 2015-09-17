@@ -4,7 +4,8 @@ Simterest.Views.UserShow = Backbone.CompositeView.extend({
 
   events: {
     "click div.screen": "closeModal",
-    "click button.close": "closeModal"
+    "click button.close": "closeModal",
+    "click button.edit-profile": "editProfie"
   },
 
   initialize: function () {
@@ -45,6 +46,14 @@ Simterest.Views.UserShow = Backbone.CompositeView.extend({
 
   showBoard: function (board) {
     Backbone.history.navigate(this.model.id + "/" + board.id, {trigger: true})
+  },
+
+  editProfie: function (e) {
+    e.preventDefault();
+    var view = new Simterest.Views.UserEditForm({
+      model: this.model
+    });
+    this.openModal(view);
   },
 
   openModal: function (view) {

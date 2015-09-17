@@ -1,10 +1,15 @@
 <div class="content-wrapper">
   <div class="main-content">
     <div class="user-show">
+      <button class="edit-profile">Edit Profile</button>
       <p>
         <img class="avatar" src=" <%= user.escape("avatar_url") %>" alt="avatar" />
       </p>
       <h1><%= user.escape("username") %></h1>
+      <h3><%= user.escape("location") %></h3>
+      <p>
+        <%= user.escape("description") %>
+      </p>
     </div>
   </div>
 </div>
