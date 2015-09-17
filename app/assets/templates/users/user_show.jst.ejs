@@ -1,6 +1,9 @@
 <div class="content-wrapper">
   <div class="main-content">
     <div class="user-show">
+      <p>
+        <img src=" <%= user.escape("avatar_url") %>" alt="" />
+      </p>
       <h1><%= user.escape("username") %></h1>
     </div>
   </div>
