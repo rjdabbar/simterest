@@ -2,7 +2,7 @@ Simterest.Views.PinFormDevice = Backbone.View.extend({
   template: JST["pins/pin_form_device"],
 
   events: {
-    "click button.next", "openForm"
+    "click button.next": "openForm"
   },
 
   initialize: function () {},
