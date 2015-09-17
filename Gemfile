@@ -21,7 +21,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # file uploading gems
 gem 'paperclip'
-gem 'aws-sdk'
+gem 'aws-sdk', '~> 1.6'
 gem 'figaro'
 
 group :development do
