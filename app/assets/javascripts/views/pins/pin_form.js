@@ -33,7 +33,7 @@ Simterest.Views.PinForm = Backbone.CompositeView.extend({
     if (this.formData) {
       this._submitWithUpload();
     } else {
-      this._submitWithURL();
+      this._submitWithURL(e);
     };
   },
 
@@ -48,7 +48,7 @@ Simterest.Views.PinForm = Backbone.CompositeView.extend({
     })
   },
 
-  _submitWithURL: function () {
+  _submitWithURL: function (e) {
     var board_id = $(e.currentTarget).data("id");
     var description = $("textarea#pin_description").val();
     var pin = this.model
