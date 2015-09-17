@@ -8,7 +8,7 @@ Simterest.Routers.Router = Backbone.Router.extend({
   routes: {
     "": "index",
     ":userId": "userShow",
-    ":userId/boards": "boardIndex",
+    ":userId/:boardId": "boardShow",
   },
 
   index: function () {},
@@ -21,9 +21,14 @@ Simterest.Routers.Router = Backbone.Router.extend({
     this.swapView(view);
   },
 
-  boardIndex: function (userId) {
+  boardIndex: function (userId, boardId) {
     var user = this.users.getOrFetch(userId);
-    var boards = user.boards();
+    var board = user.boards().getOrFetch(boardId);
+    var view = new Simterest.Views.BoardShow({
+      model: board,
+      collection: board.pins()
+    });
+    this.swapView(view)
   },
 
 
