@@ -45,8 +45,26 @@ li.new-pin {
   height: 282px;
 }
 
+button.edit-pin, button.pin-it {
+  position: absolute;
+  top: 0;
+  padding: 5px 10px;
+  font-size: 14px;
+  display: none;
+}
+
 li.pin:hover {
   cursor: pointer;
+}
+
+li.pin:hover button.edit-pin {
+  right: 5px;
+  display: block;
+}
+
+li.pin:hover button.pin-it {
+  left: 5px;
+  display: block;
 }
 
 li.pin:hover .overlay-light {
