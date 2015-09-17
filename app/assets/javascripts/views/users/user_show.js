@@ -10,12 +10,9 @@ Simterest.Views.UserShow = Backbone.CompositeView.extend({
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.model.boards(), "showBoard", this.showBoard)
-    this.listenTo(this.model.boards(), "openModal", this.openModal);
-    this.listenTo(this.model.pins(), "openModal", this.openModal);
-    this.listenTo(this.model.boards(), "closeModal", this.closeModal);
-    this.listenTo(this.model.pins(), "closeModal", this.closeModal);
-    this.listenTo(this.model.boards(), "showBoards", this.addBoardIndex);
-    this.listenTo(this.model.pins(), "showPins", this.addPinIndex);
+    this._bindOpenModalListeners();
+    this._bindCloseModalListeners();
+    this._bindIndexListeners();
   },
 
   render: function () {
@@ -64,6 +61,22 @@ Simterest.Views.UserShow = Backbone.CompositeView.extend({
     this.currentIndex && this.removeSubview(".main-content", this.currentIndex);
     this.currentIndex = newIndex;
     this.addSubview(".main-content", newIndex);
+  },
+
+  _bindOpenModalListeners: function () {
+    this.listenTo(this.model.boards(), "openModal", this.openModal);
+    this.listenTo(this.model.pins(), "openModal", this.openModal);
+  },
+
+  _bindCloseModalListeners: function () {
+    this.listenTo(this.model.boards(), "closeModal", this.closeModal);
+    this.listenTo(this.model.pins(), "closeModal", this.closeModal);
+  },
+
+  _bindIndexListeners: function () {
+    this.listenTo(this.model.boards(), "showBoards", this.addBoardIndex);
+    this.listenTo(this.model.pins(), "showPins", this.addPinIndex);
   }
+
 
 })
