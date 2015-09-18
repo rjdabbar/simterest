@@ -7,7 +7,7 @@ class Api::PinsController < ApplicationController
 
   def show
     @pin = Pin.find(params[:id])
-    render json: @pin
+    render :show
   end
 
   def new
@@ -16,7 +16,7 @@ class Api::PinsController < ApplicationController
   def create
     @pin = current_user.pins.new(pin_params)
     if @pin.save
-      render json: @pin
+      render :show
     else
       render json: @pin.errors.full_messages, status: :unprocessable_entity
     end
