@@ -8,6 +8,7 @@ Simterest.Routers.Router = Backbone.Router.extend({
   routes: {
     "": "index",
     "session/new": "signIn",
+    "users/new": "signUp",
     ":userId": "userShow",
     ":userId/:boardId": "boardShow",
   },
@@ -50,6 +51,14 @@ Simterest.Routers.Router = Backbone.Router.extend({
     this._swapView(view);
   },
 
+  signUp: function (callback) {
+    if (!this._requireSignedOut(callback)) { return; }
+
+    var view = new Simterest.Views.SignUp({
+      callback: callback
+    });
+    this._swapView(view);
+  },
 
   _swapView: function (view) {
     this._currentView && this._currentView.remove();

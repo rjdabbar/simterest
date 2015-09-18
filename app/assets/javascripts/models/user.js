@@ -28,6 +28,28 @@ Simterest.Models.User = Backbone.Model.extend({
 
     return payload;
 
+  },
+
+  signUp:function (options) {
+    var model = this;
+    var credentials = {
+      "user[username]": options.username,
+      "user[password]": options.password
+    };
+    
+    $.ajax({
+      url: this.url,
+      type: "POST",
+      data: credentials,
+      dataType: "json",
+      success: function (data) {
+        model.set(data);
+        options.success && options.success();
+      },
+      error: function () {
+        options.error && options.error();
+      }
+    });
   }
 })
 
