@@ -9,6 +9,7 @@
 <body>
   <% if signed_in? %>
     <a class="profile-link" href="/#<%= current_user.id %>">Your Profile</a>
+    <button class="sign-out">Sign Out</button>
   <% else %>
       <a href="<%= new_session_url %>">Sign In</a>
       <a href="<%= new_user_url %>">Sign Up</a>

@@ -1,5 +1,6 @@
 Simterest.Views.Root = Backbone.CompositeView.extend({
   template: JST["shared/root"],
+  className: "content",
 
   initialize: function () {},
 
