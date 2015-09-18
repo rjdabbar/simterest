@@ -7,7 +7,8 @@ Simterest.Views.PinForm = Backbone.CompositeView.extend({
   },
 
   initialize: function (options) {
-    this.formData = options.formData
+    this.image = options.image;
+    this.formData = new FormData();
     this.boards = new Simterest.Collections.Boards();
     this.boards.fetch();
     this.listenTo(this.boards, "sync", this.render)
@@ -16,6 +17,7 @@ Simterest.Views.PinForm = Backbone.CompositeView.extend({
   render: function () {
     this.$el.html(this.template({pin: this.model}));
     this.populateBoards();
+    this._updatePreview();
     return this;
   },
 
@@ -30,7 +32,7 @@ Simterest.Views.PinForm = Backbone.CompositeView.extend({
 
   submit: function (e) {
     e.preventDefault();
-    if (this.formData) {
+    if (this.image) {
       this._submitWithUpload(e);
     } else {
       this._submitWithURL(e);
@@ -51,7 +53,7 @@ Simterest.Views.PinForm = Backbone.CompositeView.extend({
   _submitWithURL: function (e) {
     var board_id = $(e.currentTarget).data("id");
     var description = $("textarea#pin_description").val();
-    var pin = this.model
+    var pin = this.model;
     pin.set({board_id: board_id, description: description})
     pin.save({}, {
       success: function (model, response, options) {
@@ -64,8 +66,21 @@ Simterest.Views.PinForm = Backbone.CompositeView.extend({
   _updateFormData: function (e) {
     var board_id = $(e.currentTarget).data("id");
     var description = $("textarea#pin_description").val();
+    this.formData.append("pin[image]", this.image)
     this.formData.append("pin[board_id]", board_id);
     this.formData.append("pin[description]", description);
+  },
+
+  _updatePreview: function(){
+    var reader = new FileReader();
+    reader.onloadend = function () {
+      this.$el.find("img.pin-image").attr("src", reader.result);
+    }.bind(this)
+    if (this.image) {
+      reader.readAsDataURL(this.image);
+    } else {
+      this.$el.find("img.pin-image").attr("src", this.model.get("source_url"));
+    }
   }
 
 })
