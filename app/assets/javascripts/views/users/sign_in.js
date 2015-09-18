@@ -1,7 +1,9 @@
 Simterest.Views.SignIn = Backbone.View.extend({
   template: JST["users/sign_in"],
 
-  evetns: {},
+  evetns: {
+    "submit form": "submit"
+  },
 
   initialize: function (options) {
     this.callback = options.callback;
@@ -15,7 +17,7 @@ Simterest.Views.SignIn = Backbone.View.extend({
 
   submit: function (e) {
     e.preventDefault();
-    var creds = $(e.currentUser).serializeJSON().user;
+    var creds = $(e.currentTarget).serializeJSON().user;
     Simterest.currentUser.signIn({
       username: creds.username,
       password: creds.password,

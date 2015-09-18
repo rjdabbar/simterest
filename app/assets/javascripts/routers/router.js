@@ -45,16 +45,18 @@ Simterest.Routers.Router = Backbone.Router.extend({
   signIn: function (callback) {
     if (!this._requireSignedOut(callback)) { return; }
 
-    var view = new Simterest.Views.SignIn({
-      callback: callback
+    var view = new Simterest.Views.Root({
+      callback: callback,
+      status: "signIn"
     });
     this._swapView(view);
   },
 
   signUp: function (callback) {
-    if (!this._requireSignedOut(callback)) { return; }
-
+    // if (!this._requireSignedOut(callback)) { return; }
+    var user = new Simterest.Models.User();
     var view = new Simterest.Views.SignUp({
+      model: user,
       callback: callback
     });
     this._swapView(view);
