@@ -14,7 +14,12 @@ Simterest.Views.BoardIndexItem = Backbone.View.extend({
   },
 
   initialize: function () {
-    this.listenTo(this.model, "sync", this.render)
+
+    // this.mainPin = this.model.pins().last;
+    // this.pinThumbs = this.model.pins().slice(-4, -1);
+    this.listenTo(this.pinThumbs, "sync", this.render);
+    // this.listenTo(this.model, "sync", this.render);
+    // this.listenTo(this.mainPin, "sync", this.render);
   },
 
   render: function () {

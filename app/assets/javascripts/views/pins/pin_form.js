@@ -31,14 +31,14 @@ Simterest.Views.PinForm = Backbone.CompositeView.extend({
   submit: function (e) {
     e.preventDefault();
     if (this.formData) {
-      this._submitWithUpload();
+      this._submitWithUpload(e);
     } else {
       this._submitWithURL(e);
     };
   },
 
-  _submitWithUpload: function () {
-    this._updateFormData();
+  _submitWithUpload: function (e) {
+    this._updateFormData(e);
     var pin = this.model;
     pin.saveFormData(this.formData, {
       success: function (model, response, options) {
@@ -61,7 +61,7 @@ Simterest.Views.PinForm = Backbone.CompositeView.extend({
     })
   },
 
-  _updateFormData: function () {
+  _updateFormData: function (e) {
     var board_id = $(e.currentTarget).data("id");
     var description = $("textarea#pin_description").val();
     this.formData.append("pin[board_id]", board_id);
