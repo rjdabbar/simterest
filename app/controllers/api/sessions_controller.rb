@@ -1,4 +1,4 @@
-class SessionsController < ApplicationController
+class Api::SessionsController < ApplicationController
 
   def new
   end
@@ -10,6 +10,14 @@ class SessionsController < ApplicationController
       redirect_to root_url
     else
       render :new
+    end
+  end
+
+  def show
+    if current_user
+      render :show
+    else
+      render json: {}
     end
   end
 
