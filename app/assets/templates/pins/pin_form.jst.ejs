@@ -3,7 +3,7 @@
 <div class="modal">
   <div class="modal-content">
     <div class="pin-image-holder">
-      <img class="pin-image" src="" alt="IMAGE" />
+      <img class="pin-image" src="<%= pin.escape("image_url") %>" alt="IMAGE" />
       <div class="pin-description-holder">
         <textarea id="pin_description"
                   name="pin[description]"

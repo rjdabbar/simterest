@@ -14,7 +14,7 @@ Simterest.Views.PinForm = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    this.$el.html(this.template());
+    this.$el.html(this.template({pin: this.model}));
     this.populateBoards();
     return this;
   },

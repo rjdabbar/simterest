@@ -48,8 +48,11 @@ li.new-pin {
 }
 
 button.edit-pin, button.pin-it {
+  background: #f3f3f3;
   position: absolute;
-  top: 0;
+  top: 8px;
+  border: #ccc solid 1px;
+  border-radius: 3px;
   padding: 5px 10px;
   font-size: 14px;
   display: none;
@@ -61,12 +64,12 @@ li.pin:hover {
 }
 
 li.pin:hover button.edit-pin {
-  right: 5px;
+  right: 8px;
   display: block;
 }
 
 li.pin:hover button.pin-it {
-  left: 5px;
+  left: 8px;
   display: block;
 }
 
