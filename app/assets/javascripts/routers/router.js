@@ -7,6 +7,7 @@ Simterest.Routers.Router = Backbone.Router.extend({
 
   routes: {
     "": "index",
+    "session/new": "signIn",
     ":userId": "userShow",
     ":userId/:boardId": "boardShow",
   },

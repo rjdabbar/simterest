@@ -5,7 +5,8 @@ Simterest.Views.UserShow = Backbone.CompositeView.extend({
   events: {
     "click div.screen": "closeModal",
     "click button.close": "closeModal",
-    "click button.edit-profile": "editProfie"
+    "click button.edit-profile": "editProfie",
+    "click button.sign-out": "signOut"
   },
 
   initialize: function () {

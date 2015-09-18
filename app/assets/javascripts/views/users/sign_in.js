@@ -3,7 +3,7 @@ Simterest.Views.SignIn = Backbone.View.extend({
 
   evetns: {},
 
-  initialize: function () {
+  initialize: function (options) {
     this.callback = options.callback;
     this.listenTo(Simterest.currentUser, "signIn", this.signInCallback)
   },
