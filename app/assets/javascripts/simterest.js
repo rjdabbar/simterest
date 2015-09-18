@@ -5,6 +5,8 @@ window.Simterest = {
   Routers: {},
   Globals: {},
   initialize: function() {
+    this.currentUser = new Simterest.Models.CurrentUser();
+    this.currentUser.fetch();
     Simterest.Collections.users = new Simterest.Collections.Users();
     new Simterest.Routers.Router({
       users: Simterest.Collections.users,
