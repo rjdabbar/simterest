@@ -54,7 +54,7 @@ Simterest.Routers.Router = Backbone.Router.extend({
       return false;
     };
     return true;
-  }
+  },
 
   _requireSignedOut: function (callback) {
     if(Simterest.currentUser.isSignedIn()) {
@@ -66,7 +66,7 @@ Simterest.Routers.Router = Backbone.Router.extend({
   },
 
   _goHome: function () {
-    Backbone.history.navigate("", { trigger: true })''
+    Backbone.history.navigate("", { trigger: true });
   }
 
 })
