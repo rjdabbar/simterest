@@ -19,7 +19,7 @@ li.pin {
   padding: 5px;
   border-radius: 5px;
   float: left;
-  margin: 0 5px;
+  margin: 5px;
   background: white;
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);
 }
@@ -44,7 +44,10 @@ div.pin-pins {
 }
 
 li.new-pin {
-  height: 282px;
+  height: 276px;
+  background: transparent;
+  border: 3px #ccc dotted;
+  box-shadow: none;
 }
 
 button.edit-pin, button.pin-it {

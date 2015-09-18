@@ -19,9 +19,6 @@ ul.public-board-index {
   padding: 20px 30px 40px 30px;
 }
 
-li.new-board {
-  height: 282px;
-}
 
 li.board {
   position: relative;
@@ -29,9 +26,16 @@ li.board {
   padding: 5px;
   border-radius: 5px;
   float: left;
-  margin: 0 5px;
+  margin: 5px;
   background: white;
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);
+}
+
+li.new-board {
+  height: 276px;
+  background: transparent;
+  border: 3px #ccc dotted;
+  box-shadow: none;
 }
 
 li.board:hover {
