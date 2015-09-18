@@ -2,7 +2,7 @@
   <button class="edit-pin">Edit</button>
   <button class="pin-it">Pin</button>
   <div class="pin-image">
-    <img src="" alt="" />
+    <img src="<%= pin.escape("image_url") %>" alt="" />
   </div>
   <div class="pin-title">
     <%= pin.escape("description") %>
