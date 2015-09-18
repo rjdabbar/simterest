@@ -12,9 +12,15 @@ Simterest.Routers.Router = Backbone.Router.extend({
     ":userId/:boardId": "boardShow",
   },
 
-  index: function () {},
+  index: function () {
+    var callback = this.index.bind(this);
+    if (!this._requireSignedIn(callback)) { return; }
+  },
 
   userShow: function (userId) {
+    var callback = this.userShow.bind(this, userId);
+    if (!this._requireSignedIn(callback)) { return; }
+
     var user = this.users.getOrFetch(userId);
     var view = new Simterest.Views.UserShow({
       model: user
@@ -23,6 +29,9 @@ Simterest.Routers.Router = Backbone.Router.extend({
   },
 
   boardShow: function (userId, boardId) {
+    var callback = this.boardShow.bind(this, userId, boardId);
+    if (!this._requireSignedIn(callback)) { return; }
+
     var user = this.users.getOrFetch(userId);
     var board = user.boards().getOrFetch(boardId);
     var view = new Simterest.Views.BoardShow({
@@ -51,7 +60,7 @@ Simterest.Routers.Router = Backbone.Router.extend({
   _requireSignedIn: function (callback) {
     if (!Simterest.currentUser.isSignedIn()) {
       callback = callback || this._goHome.bind(this);
-      callback();
+      this.signIn(callback);
       return false;
     };
     return true;

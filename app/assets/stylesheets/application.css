@@ -103,3 +103,8 @@ div.modal {
   border-radius: 3px;
   /*padding: 10px;*/
 }
+
+div.sign-in {
+  background: #f3f3f3;
+  text-align: center;
+}
