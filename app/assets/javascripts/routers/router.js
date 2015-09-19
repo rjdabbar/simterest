@@ -7,8 +7,8 @@ Simterest.Routers.Router = Backbone.Router.extend({
 
   routes: {
     "": "index",
-    "session/new": "signIn",
-    "users/new": "signUp",
+    "session/new": "auth",
+    "users/new": "auth",
     ":userId": "userShow",
     ":userId/:boardId": "boardShow",
   },
@@ -42,20 +42,11 @@ Simterest.Routers.Router = Backbone.Router.extend({
     this._swapView(view)
   },
 
-  signIn: function (callback) {
-    if (!this._requireSignedOut(callback)) { return; }
-
-    var view = new Simterest.Views.SignIn({
-      callback: callback
-    });
-    this._swapView(view);
-  },
-
-  signUp: function (callback) {
-    if (!this._requireSignedOut(callback)) { return; }
-
-    var view = new Simterest.Views.SignUp({
-      callback: callback
+  auth: function (callback, options) {
+    var route = Backbone.history.getFragment();
+    var view = new Simterest.Views.Landing({
+      route: route,
+      model: Simterest.currentUser
     });
     this._swapView(view);
   },
@@ -69,7 +60,6 @@ Simterest.Routers.Router = Backbone.Router.extend({
   _requireSignedIn: function (callback) {
     if (!Simterest.currentUser.isSignedIn()) {
       callback = callback || this._goHome.bind(this);
-      this.signIn(callback);
       return false;
     };
     return true;

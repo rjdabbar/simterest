@@ -30,81 +30,82 @@ Simterest.Models.User = Backbone.Model.extend({
 
   },
 
-  signUp:function (options) {
+  signUp: function(options){
     var model = this;
     var credentials = {
       "user[username]": options.username,
       "user[password]": options.password
     };
-    
     $.ajax({
-      url: this.url,
+      url: this.url(),
       type: "POST",
       data: credentials,
       dataType: "json",
-      success: function (data) {
+      success: function(data){
         model.set(data);
         options.success && options.success();
       },
-      error: function () {
+      error: function(){
         options.error && options.error();
       }
     });
-  }
+  },
 })
 
 Simterest.Models.CurrentUser = Simterest.Models.User.extend({
-  url: "api/session",
 
-  initialize: function () {
+  url: "/api/session",
+
+  initialize: function(options){
     this.listenTo(this, "change", this.fireSessionEvent);
   },
 
-  isSignedIn: function () {
+  isSignedIn: function() {
     return !this.isNew();
   },
 
-  signIn: function (options) {
+  signIn: function(options){
     var model = this;
     var credentials = {
-      "user[username]": options.username,
+      "user[email]": options.email,
       "user[password]": options.password
     };
 
     $.ajax({
-      url: this.url,
+      url: this.url(),
       type: "POST",
       data: credentials,
       dataType: "json",
-      success: function (data) {
+      success: function(data){
         model.set(data);
         options.success && options.success();
       },
-      error: function () {
+      error: function(){
         options.error && options.error();
       }
     });
   },
 
-  signOut: function (options) {
+  signOut: function(options){
     var model = this;
 
     $.ajax({
-      url: this.url,
+      url: this.url(),
       type: "DELETE",
       dataType: "json",
-      success: function (data) {
+      success: function(data){
         model.clear();
         options.success && options.success();
       }
     });
   },
 
-  fireSessionEvent: function () {
-    if(this.isSignedIn()) {
+  fireSessionEvent: function(){
+    if(this.isSignedIn()){
       this.trigger("signIn");
     } else {
       this.trigger("signOut");
     }
   }
-})
+
+});

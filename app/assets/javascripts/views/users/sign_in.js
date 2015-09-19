@@ -1,7 +1,9 @@
 Simterest.Views.SignIn = Backbone.View.extend({
   template: JST["users/sign_in"],
 
-  evetns: {},
+  evetns: {
+    "click button": "submit"
+  },
 
   initialize: function (options) {
     this.callback = options.callback;

@@ -10,7 +10,7 @@ class Api::UsersController < ApplicationController
     if @user.save
       sign_in!(@user)
     else
-      render :new
+
     end
   end
 
@@ -38,5 +38,9 @@ class Api::UsersController < ApplicationController
   def edit_params
     params.require(:user).permit(:username, :avatar, :location,
                                   :description, :full_name)
+  end
+
+  def user_params
+    params.require(:user).permit(:username, :password)
   end
 end
