@@ -7,7 +7,6 @@ Simterest.Views.SignUp = Backbone.View.extend({
 
   initialize: function (options) {
     this.callback = options.callback;
-    console.log("HI");
   },
 
   render: function () {
@@ -19,10 +18,15 @@ Simterest.Views.SignUp = Backbone.View.extend({
     e.preventDefault();
     var user = new Simterest.Models.User();
     var creds = $("form.user").serializeJSON().user;
-    debugger
     user.signUp({
       username: creds.username,
       password: creds.password,
+      success: function () {
+        Simterest.currentUser.signIn({
+          username: creds.username,
+          password: creds.password});
+      
+      }.bind(this),
       error: function () {
         alert("WUT")
       }

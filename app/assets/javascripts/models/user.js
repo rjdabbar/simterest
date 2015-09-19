@@ -67,12 +67,12 @@ Simterest.Models.CurrentUser = Simterest.Models.User.extend({
   signIn: function(options){
     var model = this;
     var credentials = {
-      "user[email]": options.email,
+      "user[username]": options.username,
       "user[password]": options.password
     };
 
     $.ajax({
-      url: this.url(),
+      url: this.url,
       type: "POST",
       data: credentials,
       dataType: "json",
@@ -90,7 +90,7 @@ Simterest.Models.CurrentUser = Simterest.Models.User.extend({
     var model = this;
 
     $.ajax({
-      url: this.url(),
+      url: this.url,
       type: "DELETE",
       dataType: "json",
       success: function(data){
