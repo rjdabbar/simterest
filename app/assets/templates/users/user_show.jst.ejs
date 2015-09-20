@@ -1,7 +1,9 @@
 <div class="content-wrapper">
   <div class="main-content">
     <div class="user-show">
-      <button class="edit-profile">Edit Profile</button>
+      <% if (Simterest.currentUser.id === user.id) { %>
+        <button class="edit-profile">Edit Profile</button>
+      <% } %>
       <p>
         <img class="avatar" src=" <%= user.escape("avatar_url") %>" alt="avatar" />
       </p>
