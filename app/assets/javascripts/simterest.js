@@ -6,6 +6,8 @@ window.Simterest = {
   Globals: {},
   initialize: function() {
     Simterest.Collections.users = new Simterest.Collections.Users();
+    Simterest.currentUser = new Simterest.Models.CurrentUser();
+    Simterest.currentUser.fetch();
     new Simterest.Routers.Router({
       users: Simterest.Collections.users,
       $rootEl: $(".appContent")
