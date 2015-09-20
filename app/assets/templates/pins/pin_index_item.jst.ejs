@@ -7,8 +7,12 @@
   <div class="pin-title">
     <%= pin.escape("description") %>
   </div>
+  <% if (board) { %>
   <div class="pin-pins">
-    <%= pin.escape("board_id") %>
+    <p>
+      Pinned to: <%= board.escape("title") %>
+    </p>
   </div>
+  <% } %>
 <div class="overlay-light"></div>
 </div>

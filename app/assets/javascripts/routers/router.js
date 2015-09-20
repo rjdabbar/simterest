@@ -25,6 +25,7 @@ Simterest.Routers.Router = Backbone.Router.extend({
     var user = this.users.getOrFetch(userId);
     var board = user.boards().getOrFetch(boardId);
     var view = new Simterest.Views.BoardShow({
+      user: user,
       model: board,
       collection: board.pins()
     });

@@ -7,7 +7,8 @@ Simterest.Views.BoardShow = Backbone.CompositeView.extend({
     "click button.close": "closeModal"
   },
 
-  initialize: function () {
+  initialize: function (options) {
+    this.user = options.user;
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.collection, "add remove", this.render);
     this.listenTo(this.collection, "openModal", this.openModal)
@@ -21,6 +22,7 @@ Simterest.Views.BoardShow = Backbone.CompositeView.extend({
 
   addPinIndex: function () {
     var pinIndex = new Simterest.Views.PinIndex({
+      user: this.user,
       collection: this.collection
     });
     this.addSubview("div.main-content", pinIndex)
