@@ -32,6 +32,7 @@ Simterest.Views.UserShow = Backbone.CompositeView.extend({
 
   addBoardIndex: function () {
     var boardIndex = new Simterest.Views.BoardIndex({
+      user: this.model,
       collection: this.model.boards()
     });
     this.swapIndex(boardIndex);
@@ -39,6 +40,7 @@ Simterest.Views.UserShow = Backbone.CompositeView.extend({
 
   addPinIndex: function () {
     var pinIndex = new Simterest.Views.PinIndex({
+      user: this.model,
       collection: this.model.pins()
     });
     this.swapIndex(pinIndex);

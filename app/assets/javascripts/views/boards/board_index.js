@@ -7,7 +7,8 @@ Simterest.Views.BoardIndex = Backbone.CompositeView.extend({
     "click li.board-item": "showBoard"
   },
 
-  initialize: function () {
+  initialize: function (options) {
+    this.user = options.user;
     this.listenTo(this.collection, "sync add remove", this.render);
   },
 
@@ -29,8 +30,10 @@ Simterest.Views.BoardIndex = Backbone.CompositeView.extend({
   },
 
   addNewBoard: function () {
-    var view = new Simterest.Views.BoardNewItem();
-    this.addSubview("ul.public-board-index", view, true)
+    if (Simterest.currentUser.id === this.user.id) {
+      var view = new Simterest.Views.BoardNewItem();
+      this.addSubview("ul.public-board-index", view, true)
+    }
   },
 
   newBoardModal: function (e) {

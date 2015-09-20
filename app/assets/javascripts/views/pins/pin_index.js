@@ -8,8 +8,9 @@ Simterest.Views.PinIndex = Backbone.CompositeView.extend({
     "click button.edit-pin": "editPin"
   },
 
-  initialize: function () {
-    this.listenTo(this.collection, "sync add remove", this.render)
+  initialize: function (options) {
+    this.user = options.user;
+    this.listenTo(this.collection, "sync add remove", this.render);
   },
 
   render: function () {
@@ -29,8 +30,10 @@ Simterest.Views.PinIndex = Backbone.CompositeView.extend({
   },
 
   addNewPin: function () {
-    var view = new Simterest.Views.PinNewItem()
-    this.addSubview("ul.pin-index", view, true);
+    if (Simterest.currentUser.id === this.user.id) {
+      var view = new Simterest.Views.PinNewItem();
+      this.addSubview("ul.pin-index", view, true);
+    }
   },
 
   newPinModal:function (e) {
