@@ -10,7 +10,7 @@ Simterest.Views.PinIndexItem = Backbone.View.extend({
   },
 
   events: {
-
+    "click div.pin-image": "showPin"
   },
 
   initialize: function (options) {
@@ -24,7 +24,14 @@ Simterest.Views.PinIndexItem = Backbone.View.extend({
     return this;
   },
 
-
-
-
+  showPin: function (e) {
+    e.preventDefault();
+    var pinId = $(e.currentTarget).parent().parent().data("id");
+    
+    var pin = this.collection.getOrFetch(pinId);
+    var view = new Simterest.Views.PinShow({
+      model: pin
+    });
+    this.collection.trigger("openModal", view)
+  }
 })
