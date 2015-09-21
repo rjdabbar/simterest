@@ -1,5 +1,14 @@
-Sign Up!
-<form class="user_form" action=" <%= users_url %>" method="post">
-  <%= form_auth_token %>
-  <%= render "partials/user_form" %>
-</form>
+<div class="screen">
+</div>
+<div class="modal">
+  <div class="modal-content auth-modal">
+    <h2>Sign Up!</h2>
+    <form class="user_form" action=" <%= users_url %>" method="post">
+      <%= form_auth_token %>
+      <%= render "partials/user_form" %>
+    </form>
+    <p>
+      <a href="<%= new_session_url %>">Already have an account?  Sign in!</a>
+    </p>
+  </div>
+</div>
