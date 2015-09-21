@@ -8,6 +8,7 @@ window.Simterest = {
     Simterest.Collections.users = new Simterest.Collections.Users();
     Simterest.currentUser = new Simterest.Models.CurrentUser();
     Simterest.currentUser.fetch();
+    this.header = new Simterest.Views.Header({ el: ".header"})
     new Simterest.Routers.Router({
       users: Simterest.Collections.users,
       $rootEl: $(".appContent")

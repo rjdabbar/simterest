@@ -20,32 +20,7 @@ Simterest.Views.BoardIndexItem = Backbone.CompositeView.extend({
 
   render: function () {
     this.$el.html(this.template({board: this.model}));
-    this.addPinThumbs();
     return this;
-  },
-
-  addPinThumbs: function () {
-    this.pins = this.model.pins();
-    // LOGICS FOR GETTING THE RIGHT PINS SET
-    // NEED TO FETCH?
-    // this.addMainPin(GET THE RIGHT PIN);
-    // this.addLittlePins(GET THE RIGHT PINS);
-  },
-
-  addMainPin: function (pin) {
-    var view = new Simterest.Views.BoardIndexItemPinThumb({
-      model: pin
-    });
-    this.addSubview("div.large-pin", view)
-  },
-
-  addLittlePins: function (pins) {
-    pins.each(function(pin) {
-      var view = new Simterest.Views.BoardIndexItemPinThumb({
-        model: pin
-      });
-      this.addSubview("div.pin-thumbs", view, true)
-    }.bind(this))
   },
 
   openEditModal: function (e) {
