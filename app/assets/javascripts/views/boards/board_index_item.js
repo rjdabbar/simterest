@@ -10,7 +10,7 @@ Simterest.Views.BoardIndexItem = Backbone.CompositeView.extend({
   },
 
   events: {
-    "click button.edit": "openEditModal"
+    "click button.edit": "openEditModal",
   },
 
   initialize: function () {
@@ -30,6 +30,8 @@ Simterest.Views.BoardIndexItem = Backbone.CompositeView.extend({
       collection: this.collection,
       model: board
     });
-    this.model.trigger("openModal", view)
-  }
+    this.collection.trigger("openModal", view)
+  },
+
+
 })

@@ -1,11 +1,13 @@
 <h3><%= board.escape("title") %></h3>
-<div class="large-pin">
-  <img src="<%= board.escape("main_pin_image") %>" alt="" />
-</div>
-<div class="pin-thumbs">
-  <img src="<%= board.escape("pin_thumb_one") %>" alt="" />
-  <img src="<%= board.escape("pin_thumb_two") %>" alt="" />
-  <img src="<%= board.escape("pin_thumb_three") %>" alt="" />
+<div class="board-info">
+  <div class="large-pin">
+    <img src="<%= board.escape("main_pin_image") %>" alt="" />
+  </div>
+  <div class="pin-thumbs">
+    <img src="<%= board.escape("pin_thumb_one") %>" alt="" />
+    <img src="<%= board.escape("pin_thumb_two") %>" alt="" />
+    <img src="<%= board.escape("pin_thumb_three") %>" alt="" />
+  </div>
 </div>
 <button class="edit">Edit</button>
-<div class="overlay-light"></div>
+<!-- <div class="overlay-light"></div> -->

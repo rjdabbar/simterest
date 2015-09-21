@@ -4,7 +4,8 @@ Simterest.Views.BoardIndex = Backbone.CompositeView.extend({
 
   events: {
     "click li.new-board": "newBoardModal",
-    "click li.board-item": "showBoard"
+    "click div.board-info": "showBoard"
+
   },
 
   initialize: function (options) {
@@ -48,7 +49,11 @@ Simterest.Views.BoardIndex = Backbone.CompositeView.extend({
 
   showBoard:function (e) {
     e.preventDefault();
-    var board = this.collection.getOrFetch($(e.currentTarget).data("id"));
+    var board = this.collection.getOrFetch(this._getBoard($(e.currentTarget)));
     this.collection.trigger("showBoard", board);
+  },
+
+  _getBoard: function ($target) {
+    return $target.parent().data("id")
   }
 })
