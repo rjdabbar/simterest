@@ -5,6 +5,8 @@ json.avatar_url asset_path(@user.avatar.url)
 json.boards @user.boards do |board|
   json.extract! board, :id, :creator_id, :title, :description, :category,
                           :secret, :created_at, :updated_at
+  json.main_pin_id board.pins.last.id
+  json.main_pin_image board.pins.last.get_image_url
 end
 json.pins @user.pins do |pin|
   json.extract! pin, :id, :pinner_id, :description, :board_id,
