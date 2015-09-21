@@ -102,7 +102,7 @@ div.modal {
   background: #fff;
   width: 700px;
   margin: 20% 30%;
-  position: fixed;
+  position: absolute;
   text-align: left;
   border-radius: 3px;
   box-shadow: 0 0 1px 2px #eee;
