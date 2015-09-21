@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   has_many :boards, foreign_key: :creator_id
   has_many :pins, foreign_key: :pinner_id
   has_many :shared_pins, foreign_key: :via_user_id, class_name: "Pin"
-  has_attached_file :avatar, default_url: "/assets/images/missing.png"
+  has_attached_file :avatar, default_url: "missing.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
   def self.generate_secure_token
