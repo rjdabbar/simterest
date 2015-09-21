@@ -15,7 +15,7 @@ Simterest.Views.BoardIndexItem = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.listenTo(this.model, "sync change", this.render);
-    this.listenTo(this.model.pins(), "sync", this.render)
+    this.listenTo(this.model.pins(), "sync update", this.render);
   },
 
   render: function () {
