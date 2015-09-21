@@ -7,6 +7,10 @@ class Board < ActiveRecord::Base
 
   after_initialize :default_boards_to_not_be_secret
 
+  def index_thumbs
+    self.pins[-4..-1]
+  end
+
   private
 
   def default_boards_to_not_be_secret

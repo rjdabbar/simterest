@@ -15,7 +15,6 @@ Simterest.Views.PinIndexItem = Backbone.View.extend({
 
   initialize: function (options) {
     this.listenTo(this.model, "sync", this.render)
-    debugger
   },
 
   render: function () {
