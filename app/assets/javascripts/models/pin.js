@@ -9,10 +9,5 @@ Simterest.Models.Pin = Backbone.Model.extend({
     return { pin: _.clone(this.attributes) }
   },
 
-  // board: function () {
-  //   if (typeof this._board === "undefined") {
-  //     this._board = new Simterest.Models.Board();
-  //   }
-  //   return this._board
-  // }
+
 })

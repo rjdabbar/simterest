@@ -14,15 +14,13 @@ Simterest.Views.PinIndexItem = Backbone.View.extend({
   },
 
   initialize: function (options) {
-    // this.board = options.user.boards().getOrFetch(this.model.get("board_id"))
     this.listenTo(this.model, "sync", this.render)
-    this.listenTo(this.board, "sync", this.render)
+    debugger
   },
 
   render: function () {
     this.$el.html(this.template({
-      pin: this.model,
-      // board: this.board
+      pin: this.model
     }));
     return this;
   },

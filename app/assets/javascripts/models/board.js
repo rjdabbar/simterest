@@ -5,12 +5,16 @@ Simterest.Models.Board = Backbone.Model.extend({
     if (this._pins === undefined) {
       this._pins = new Simterest.Collections.Pins([], {board_id: this.id})
     };
+
     return this._pins
   },
 
   parse: function (payload) {
     if (payload.pins) {
       this.pins().set(payload.pins, {parse: true})
+      this.pins().each(function (pin) {
+        pin.board().set(this);
+      }.bind(this))
       delete payload.pins
     };
       return payload
