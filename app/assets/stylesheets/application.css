@@ -105,7 +105,7 @@ div.modal {
   position: absolute;
   text-align: left;
   border-radius: 3px;
-  box-shadow: 0 0 1px 2px black;
+  box-shadow: 0 0 1px 2px #ccc;
   /*padding: 10px;*/
 }
 
@@ -145,5 +145,28 @@ button.auth {
 
 
 div.header {
+  margin: 0 auto;
+  border-bottom: 2px solid grey;
+  background: linear-gradient(#ddd, #f3f3f3);
+}
 
+nav.header {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+button.profile {
+  float: right;
+  background: linear-gradient(#fff, #f0f0f0);
+  padding: 10px 30px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+button.sign-out {
+  background: red;
+  color: white;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
 }
