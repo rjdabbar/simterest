@@ -4,6 +4,7 @@ Simterest.Views.Header = Backbone.View.extend({
   events: {
     "click button.profile": "userShow",
     "click button.sign-out": "signOut"
+
   },
 
   initialize: function () {

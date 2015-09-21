@@ -37,6 +37,7 @@ Simterest.Views.PinForm = Backbone.CompositeView.extend({
     } else {
       this._submitWithURL(e);
     };
+    
   },
 
   _submitWithUpload: function (e) {

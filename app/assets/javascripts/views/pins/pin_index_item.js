@@ -14,7 +14,8 @@ Simterest.Views.PinIndexItem = Backbone.View.extend({
   },
 
   initialize: function (options) {
-    this.listenTo(this.model, "sync", this.render)
+    this.listenTo(this.model, "sync", this.render);
+    this.listenTo(this.model, "change", console.log("CHANGE"));
   },
 
   render: function () {
@@ -27,7 +28,7 @@ Simterest.Views.PinIndexItem = Backbone.View.extend({
   showPin: function (e) {
     e.preventDefault();
     var pinId = $(e.currentTarget).parent().parent().data("id");
-    
+
     var pin = this.collection.getOrFetch(pinId);
     var view = new Simterest.Views.PinShow({
       model: pin

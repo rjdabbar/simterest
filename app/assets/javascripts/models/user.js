@@ -47,7 +47,7 @@ Simterest.Models.CurrentUser = Simterest.Models.User.extend({
       dataType: "json",
       success: function(data){
         model.clear();
-        Backbone.history.navigate("/session/new", {trigger: true})
+        window.location.href = "/session/new"
       }
     });
   },

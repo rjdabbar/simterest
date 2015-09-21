@@ -1,4 +1,4 @@
-Simterest.Views.PinShow = Backbone.View.extend({
+Simterest.Views.PinShow = Backbone.CompositeView.extend({
   template: JST['pins/pin_show'],
 
   initialize: function () {},
