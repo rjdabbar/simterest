@@ -38,39 +38,17 @@ Simterest.Models.CurrentUser = Simterest.Models.User.extend({
     return !this.isNew();
   },
 
-  // signIn: function(options){
-  // var model = this;
-  // var credentials = {
-  //   "user[email]": options.email,
-  //   "user[password]": options.password
-  // };
-  //
-  // $.ajax({
-  //     url: this.url,
-  //     type: "POST",
-  //     data: credentials,
-  //     dataType: "json",
-  //     success: function(data){
-  //       model.set(data);
-  //       options.success && options.success();
-  //     },
-  //     error: function(){
-  //       options.error && options.error();
-  //     }
-  //   });
-  // },
-  //
-  // signOut: function(options){
-  //   var model = this;
-  //
-  //   $.ajax({
-  //     url: this.url,
-  //     type: "DELETE",
-  //     dataType: "json",
-  //     success: function(data){
-  //       model.clear();
-  //       options.success && options.success();
-  //     }
-  //   });
-  // },
+  signOut: function(options){
+    var model = this;
+
+    $.ajax({
+      url: this.url,
+      type: "DELETE",
+      dataType: "json",
+      success: function(data){
+        model.clear();
+        Backbone.history.navigate("/session/new", {trigger: true})
+      }
+    });
+  },
 })

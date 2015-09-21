@@ -2,7 +2,8 @@ Simterest.Views.Header = Backbone.View.extend({
   template: JST["header"],
 
   events: {
-    "click button.profile": "userShow"
+    "click button.profile": "userShow",
+    "click button.sign-out": "signOut"
   },
 
   initialize: function () {
@@ -14,7 +15,15 @@ Simterest.Views.Header = Backbone.View.extend({
     return this;
   },
 
-  userShow: function () {
+  userShow: function (e) {
+    e.preventDefault();
     Backbone.history.navigate("" + Simterest.currentUser.id, {trigger: true})
+  },
+
+  signOut: function (e) {
+    e.preventDefault();
+
+    Simterest.currentUser.signOut();
+
   }
 })
