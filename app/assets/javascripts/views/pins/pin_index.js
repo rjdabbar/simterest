@@ -68,7 +68,7 @@ Simterest.Views.PinIndex = Backbone.CompositeView.extend({
   },
 
 
-  _getPin: function ($button) {
-    return $button.parent().parent().data("id");
+  _getPin: function ($target) {
+    return $target.parent().parent().data("id");
   }
 })

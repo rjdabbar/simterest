@@ -27,12 +27,15 @@ Simterest.Views.PinIndexItem = Backbone.View.extend({
 
   showPin: function (e) {
     e.preventDefault();
-    var pinId = $(e.currentTarget).parent().parent().data("id");
 
-    var pin = this.collection.getOrFetch(pinId);
+    var pin = this.collection.getOrFetch(this._getPin($(e.currentTarget)));
     var view = new Simterest.Views.PinShow({
       model: pin
     });
     this.collection.trigger("openModal", view)
+  },
+
+  _getPin: function ($target) {
+    return $target.parent().parent().data("id");
   }
 })
