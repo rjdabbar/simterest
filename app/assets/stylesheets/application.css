@@ -100,17 +100,47 @@ div.modal {
   display: block;
   z-index: 2;
   background: #fff;
-  width: 700px;
+  /*width: 700px;*/
   margin: 20% 30%;
   position: absolute;
   text-align: left;
   border-radius: 3px;
-  box-shadow: 0 0 1px 2px #eee;
+  box-shadow: 0 0 1px 2px black;
   /*padding: 10px;*/
+}
+
+div.modal-content {
+  width: 700px;
 }
 
 div.auth-modal {
   text-align: center;
+  width: 300px;
+}
+
+div.auth-modal > h2 {
+  margin: 20px 0;
+}
+
+form.user-form > label, input {
+  background: #eee;
+  margin-bottom: 20px;
+  height: 20px;
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+}
+
+form.user-form > input {
+
+}
+
+button.auth {
+  background: red;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  color: white;
+  margin-bottom: 20px;
 }
 
 
