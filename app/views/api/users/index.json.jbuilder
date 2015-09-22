@@ -1,1 +1,3 @@
-json.array! @users, :id, :username
+json.users @users do |user|
+  json.partial! "api/users/user", user: user
+end
