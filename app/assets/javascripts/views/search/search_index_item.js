@@ -6,7 +6,7 @@ Simterest.Views.SearchIndexItem = Backbone.View.extend({
   initialize: function () {},
 
   render: function () {
-    this.$el.html(this.template());
+    this.$el.html(this.template({result: this.model}));
     return this;
   },
 })

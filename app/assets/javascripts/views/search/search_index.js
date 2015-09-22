@@ -2,7 +2,7 @@ Simterest.Views.SearchIndex = Backbone.CompositeView.extend({
   template: JST['search/search_index'],
 
   initialize: function () {
-
+    this.listenTo(this.collection, "sync", this.populateSearchResults)
   },
 
   render: function () {
@@ -10,7 +10,15 @@ Simterest.Views.SearchIndex = Backbone.CompositeView.extend({
     return this;
   },
 
-  populateSearchResults: function (results) {
-    
+  populateSearchResults: function () {
+    this.collection.each(function(result) {
+      $("div.search-results").show();
+      if (!result.attributes.pinner_id) {
+        var view = new Simterest.Views.SearchIndexItem({
+          model: result
+        });
+        this.addSubview("ul.results-list", view)
+      }
+    }.bind(this))
   },
 })

@@ -1,3 +1,3 @@
-<% if (typeof result === "Board") { %>
-  <a href="#/<%= board.escape("creator_id") %>/<%= board.id %>"><%= result.escape("title") %></a>
+<% if (result.attributes.title) { %>
+  <a href="#/<%= result.escape("creator_id") %>/<%= result.id %>"><%= result.escape("title") %></a>
 <% } %>

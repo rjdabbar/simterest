@@ -181,12 +181,12 @@ button.search {
 }
 
 div.search-results {
-  display: block;
+  display: none;
   position: absolute;
   top: 30px;
   width: 500px;
   height: 200px;
-  background: #11bbff;
+  background: #ccc;
 }
 
 button.profile {

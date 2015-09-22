@@ -5,12 +5,6 @@ Simterest.Models.Pin = Backbone.Model.extend({
     this.setId();
   },
 
-  setId: function () {
-    if (typeof this.id === "string") {
-      this.id = this.id.split("_").pop();
-    }
-  },
-
   parse: function (payload) {
     return payload
   },

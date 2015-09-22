@@ -37,6 +37,15 @@ Backbone.Model.prototype.saveFormData = function (formData, options) {
   });
 };
 
+Backbone.Model.prototype.setId = function () {
+  if (typeof this.id === "string") {
+    this.id = this.id.split("_").pop();
+  };
+  if (typeof this.attributes.id === "string") {
+    this.attributes.id = this.attributes.id.split("_").pop();
+  };
+},
+
 Backbone.View.prototype.setModal = function (view) {
   this._modal = view;
 };

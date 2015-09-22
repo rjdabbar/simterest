@@ -8,12 +8,6 @@ Simterest.Collections.SearchResults = Backbone.Collection.extend({
   model: function (attrs) {
     var type = attrs._type;
     delete attrs._type;
-    if (type === "Board") {
-      debugger
-      return new Simterest.Models.Board(attrs)
-    } else {
-      debugger
-      return new Simterest.Models.Pin(attrs)
-    }
+    return new Simterest.Models[type](attrs);
   }
 })
