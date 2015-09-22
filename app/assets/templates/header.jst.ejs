@@ -2,10 +2,6 @@
   <% if (!Simterest.currentUser.isNew()) { %>
     <button class="profile"><%= Simterest.currentUser.get("username") %></button>
     <button class="sign-out">Sign Out</button>
-  <% } else { %>
-    <a href="/session/new">Sign In!</a>
-    <a href="/users/new">Sign Up!</a>
-    <% } %>
     <div class="search-bar">
       <input class="query" type="text">
       <button class="search">Search</button>
@@ -13,4 +9,9 @@
 
       </div>
     </div>
+  <% } else { %>
+    <a href="/session/new">Sign In!</a>
+    <a href="/users/new">Sign Up!</a>
+    <% } %>
+
 </nav>
