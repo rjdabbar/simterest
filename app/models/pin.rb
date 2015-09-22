@@ -1,5 +1,5 @@
 class Pin < ActiveRecord::Base
-
+  include PgSearch
   validates :pinner_id, :board_id, presence: true
   # validate :has_an_image_source
 
@@ -9,6 +9,7 @@ class Pin < ActiveRecord::Base
   has_attached_file :image
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
+  multisearchable against: :description
 
   # private
 

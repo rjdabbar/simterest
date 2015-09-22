@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
   has_attached_file :avatar, default_url: "missing.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
+  multisearchable against: :username
+
   def self.generate_secure_token
     SecureRandom.urlsafe_base64(16)
   end
