@@ -1,4 +1,4 @@
-json.results do
+
   json.array! @search_results do |result|
     json._type result.searchable_type
     if result.searchable_type == "User"
@@ -8,5 +8,5 @@ json.results do
     elsif result.searchable_type == "Pin"
       json.partial! "api/pins/pin", pin: result.searchable
     end
+    json.id "#{result.searchable_type}_#{result.searchable_id}"
   end
-end
