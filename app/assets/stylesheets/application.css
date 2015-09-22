@@ -171,12 +171,22 @@ input.query {
   font-size: 16px;
   height: 25px;
 }
+
 button.search {
   background: red;
   color: white;
   padding: 7px 15px 5px 15px;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+div.search-results {
+  display: block;
+  position: absolute;
+  top: 30px;
+  width: 500px;
+  height: 200px;
+  background: #11bbff;
 }
 
 button.profile {

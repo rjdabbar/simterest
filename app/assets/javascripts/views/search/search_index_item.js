@@ -1,4 +1,4 @@
-Simterst.Views.SearchIndexItem = Backbone.View.extend({
+Simterest.Views.SearchIndexItem = Backbone.View.extend({
   template: JST['search/search_index_item'],
   tagName: "li",
   className: "search-item",
