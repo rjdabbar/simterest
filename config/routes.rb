@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resource :session, only: [:new, :create, :destroy]
 
   namespace :api, defaults: { format: :json } do
+    get "/search", to: "searches#search"
     resource :session, only: [:show, :destroy]
     resources :users
     resources :boards, except: [:edit]
