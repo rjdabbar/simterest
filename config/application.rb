@@ -31,5 +31,9 @@ module Simterest
         :secret_access_key => ENV["s3_secret_access_key"]
       }
     }
+
+    PgSearch.multisearch_options = {
+      using: {tsearch: { prefix: true } }
+    }
   end
 end
