@@ -152,7 +152,23 @@ div.header {
 
 nav.header {
   width: 1000px;
+  position: relative;
   margin: 0 auto;
+}
+
+div.search-bar {
+  float: left;
+  position: absolute;
+  top: 5px;
+  margin-left: 200px;
+  width: 500px;
+}
+
+input.query {
+  width: 500px;
+  background: #fff;
+  color: #000;
+  font-size: 16px;
 }
 
 button.profile {

@@ -6,9 +6,10 @@ Simterest.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
-    "": "index",
-    ":userId": "userShow",
+    ""                : "index",
+    ":userId"         : "userShow",
     ":userId/:boardId": "boardShow",
+    "search"          : "search"
   },
 
   index: function () {},
@@ -30,6 +31,11 @@ Simterest.Routers.Router = Backbone.Router.extend({
       collection: board.pins()
     });
     this.swapView(view)
+  },
+
+  search: function () {
+    var view = new Simterest.Views.SearchIndex();
+    this.swapView(view);
   },
 
 
