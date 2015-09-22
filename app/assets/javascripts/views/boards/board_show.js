@@ -12,6 +12,7 @@ Simterest.Views.BoardShow = Backbone.CompositeView.extend({
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.collection, "add remove", this.render);
     this.listenTo(this.collection, "openModal", this.openModal)
+    this.listenTo(this.collection, "closeModal", this.closeModal)
   },
 
   render: function () {
