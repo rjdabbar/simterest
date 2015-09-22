@@ -161,7 +161,7 @@ div.search-bar {
   position: absolute;
   top: 5px;
   margin-left: 200px;
-  width: 500px;
+  width: 580px;
 }
 
 input.query {
@@ -169,6 +169,14 @@ input.query {
   background: #fff;
   color: #000;
   font-size: 16px;
+  height: 25px;
+}
+button.search {
+  background: red;
+  color: white;
+  padding: 7px 15px 5px 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 button.profile {
