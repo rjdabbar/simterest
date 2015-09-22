@@ -10,12 +10,14 @@ Simterest.Views.Header = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.searchResults = new Simterest.Collections.SearchResults();
+    this.searchResultsView = new Simterest.Views.SearchIndex();
     this.listenTo(Simterest.currentUser, "sync", this.render);
     this.listenTo(this.searchResults, "sync", this.updateSearchResults)
   },
 
   render: function () {
     this.$el.html(this.template());
+    this.addSubview("div.search-results", this.searchResultsView)
     return this;
   },
 
@@ -35,14 +37,11 @@ Simterest.Views.Header = Backbone.CompositeView.extend({
     this.searchResults.fetch({
       data: {
         query: this.searchResults.query
-      },
-      success: function() {
-        // debugger
-      }.bind(this)
+      }
     });
   },
 
   updateSearchResults: function () {
-    console.log(this.searchResults);
+    this.searchResultsView.populateSearchResults(this.searchResults);
   }
 })

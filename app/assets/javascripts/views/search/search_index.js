@@ -9,4 +9,8 @@ Simterest.Views.SearchIndex = Backbone.CompositeView.extend({
     this.$el.html(this.template());
     return this;
   },
+
+  populateSearchResults: function (results) {
+    
+  },
 })
