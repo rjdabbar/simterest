@@ -1,6 +1,16 @@
 Simterest.Models.User = Backbone.Model.extend({
   urlRoot: "api/users",
 
+  initialize: function (attrs) {
+    this.setId();
+  },
+
+  setId: function () {
+    if (typeof this.id === "string") {
+      this.id = this.id.split("_").pop();
+    }
+  },
+
   boards: function () {
     if (typeof this._boards === "undefined") {
       this._boards = new Simterest.Collections.Boards([], {creator_id: this.id});
