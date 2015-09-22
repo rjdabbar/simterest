@@ -24,6 +24,9 @@ gem 'paperclip'
 gem 'aws-sdk', '~> 1.6'
 gem 'figaro'
 
+#search
+gem 'pg_search'
+
 group :development do
   gem 'pry-rails'
   gem 'better_errors'
