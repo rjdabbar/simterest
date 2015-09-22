@@ -2,7 +2,7 @@ Simterest.Views.SearchIndex = Backbone.CompositeView.extend({
   template: JST['search/search_index'],
 
   initialize: function () {
-    this.listenTo(this.collection, "sync", this.populateSearchResults)
+    this.listenTo(this.collection, "sync", this.populateSearchResults);
   },
 
   render: function () {
@@ -11,6 +11,7 @@ Simterest.Views.SearchIndex = Backbone.CompositeView.extend({
   },
 
   populateSearchResults: function () {
+    this.removeSubviews("ul.results-list");
     this.collection.each(function(result) {
       $("div.search-results").show();
       if (!result.attributes.pinner_id) {

@@ -4,19 +4,22 @@ Simterest.Views.Header = Backbone.CompositeView.extend({
   events: {
     "click button.profile": "userShow",
     "click button.sign-out": "signOut",
-    "change input.query": "search"
+    "input input.query": "search"
 
   },
 
   initialize: function () {
     this.searchResults = new Simterest.Collections.SearchResults();
-
+    this.searchResultsView = new Simterest.Views.SearchIndex({
+      collection: this.searchResults
+    });
     this.listenTo(Simterest.currentUser, "sync", this.render);
-    this.listenTo(this.searchResults, "sync", this.updateSearchResults)
+    this.listenTo(this.searchResults, "sync", this.hideSearchResults)
   },
 
   render: function () {
     this.$el.html(this.template());
+    this.addSubview("div.search-results", this.searchResultsView)
     return this;
   },
 
@@ -36,15 +39,15 @@ Simterest.Views.Header = Backbone.CompositeView.extend({
     this.searchResults.fetch({
       data: {
         query: this.searchResults.query
-      }
+      },
+      reset: true
     });
   },
 
-  updateSearchResults: function () {
-    var searchResultsView = new Simterest.Views.SearchIndex({
-      collection: this.searchResults
-    });
-    this.addSubview("div.search-results", searchResultsView)
-    searchResultsView.populateSearchResults();
-  }
+  hideSearchResults: function () {
+    if(this.searchResults.length === 0) {
+      $("div.search-results").hide();
+    }
+  },
+
 })
