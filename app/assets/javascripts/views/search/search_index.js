@@ -1,5 +1,7 @@
 Simterest.Views.SearchIndex = Backbone.CompositeView.extend({
   template: JST['search/search_index'],
+  tagName: "ul",
+  className: "results-list",
 
   initialize: function () {
     this.listenTo(this.collection, "sync", this.populateSearchResults);
@@ -18,7 +20,11 @@ Simterest.Views.SearchIndex = Backbone.CompositeView.extend({
         var view = new Simterest.Views.SearchIndexItem({
           model: result
         });
-        this.addSubview("ul.results-list", view)
+        if (result.attributes.title) {
+          this.addSubview("ul.boards", view)
+        } else {
+          this.addSubview("ul.pinners", view)
+        }
       }
     }.bind(this))
   },
