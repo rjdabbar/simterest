@@ -7,7 +7,7 @@ Simterest.Models.User = Backbone.Model.extend({
 
   boards: function () {
     if (typeof this._boards === "undefined") {
-      this._boards = new Simterest.Collections.Boards([], {creator_id: this.id});
+      this._boards = new Simterest.Collections.Boards([], {creator: this});
     };
     return this._boards;
   },
