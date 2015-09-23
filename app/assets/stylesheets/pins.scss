@@ -54,6 +54,10 @@ li.new-pin {
   box-shadow: none;
 }
 
+li.new-pin:hover {
+  cursor: pointer;
+}
+
 button.edit-pin, button.pin-it {
   background: #f3f3f3;
   position: absolute;
@@ -75,10 +79,6 @@ li.pin:hover button.edit-pin {
 li.pin:hover button.pin-it {
   left: 8px;
   display: block;
-}
-
-button.edit-pin:hover, button.pin-it:hover {
-  cursor: pointer;
 }
 
 li.pin:hover .overlay-light {

@@ -27,6 +27,10 @@ ul, li, button, a, section, nav, main, input, textarea {
   background: transparent;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 ul {
   list-style: none;
 }
@@ -100,13 +104,11 @@ div.modal {
   display: block;
   z-index: 2;
   background: #fff;
-  /*width: 700px;*/
   margin: 200px 20% 0 20%;
   position: absolute;
   text-align: left;
   border-radius: 3px;
   box-shadow: 0 0 1px 2px #ccc;
-  /*padding: 10px;*/
 }
 
 div.modal-content {
@@ -142,7 +144,6 @@ button.auth {
   color: white;
   margin-bottom: 20px;
 }
-
 
 div.header {
   margin: 0 auto;
