@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150922144004) do
+ActiveRecord::Schema.define(version: 20150923132743) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,17 @@ ActiveRecord::Schema.define(version: 20150922144004) do
   end
 
   add_index "boards", ["creator_id"], name: "index_boards_on_creator_id", using: :btree
+
+  create_table "comments", force: :cascade do |t|
+    t.integer  "author_id",  null: false
+    t.integer  "pin_id",     null: false
+    t.text     "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "comments", ["author_id"], name: "index_comments_on_author_id", using: :btree
+  add_index "comments", ["pin_id"], name: "index_comments_on_pin_id", using: :btree
 
   create_table "pg_search_documents", force: :cascade do |t|
     t.text     "content"
