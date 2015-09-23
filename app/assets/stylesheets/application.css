@@ -185,8 +185,16 @@ div.search-results {
   position: absolute;
   top: 30px;
   width: 500px;
-  height: 200px;
-  background: #ccc;
+  background: #eee;
+  padding: 5px;
+}
+
+li.search-item {
+  padding: 5px 0;
+}
+
+li.search-item:hover {
+  background: #ddd;
 }
 
 button.profile {
