@@ -165,6 +165,7 @@ div.search-bar {
   top: 5px;
   margin-left: 200px;
   width: 580px;
+  height: 20px;
 }
 
 input.query {
