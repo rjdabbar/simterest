@@ -6,7 +6,7 @@ Simterest.Views.CommentIndexItem = Backbone.View.extend({
   initialize: function () {},
 
   render: function () {
-    this.$el.html(this.template());
+    this.$el.html(this.template({comment: this.model}));
     return this;
   }
 })

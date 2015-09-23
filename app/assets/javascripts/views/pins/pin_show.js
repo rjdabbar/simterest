@@ -5,6 +5,7 @@ Simterest.Views.PinShow = Backbone.CompositeView.extend({
 
   render: function () {
     this.$el.html(this.template({pin: this.model}))
+    this.addComments();
     return this;
   },
 
