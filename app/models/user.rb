@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   attr_accessor :password
 
   after_initialize :ensure_session_token, :ensure_username
-  
+
   has_many :boards, foreign_key: :creator_id
   has_many :pins, foreign_key: :pinner_id
   has_many :shared_pins, foreign_key: :via_user_id, class_name: "Pin"
@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
            provider: auth_hash[:provider],
            uid: auth_hash[:uid],
            full_name: auth_hash[:info][:name],
-
+           avatar_url: auth_hash[:info][:image],
            password: SecureRandom::urlsafe_base64)
    end
 
@@ -55,6 +55,10 @@ class User < ActiveRecord::Base
     self.session_token = User.generate_secure_token
     self.save!
     self.session_token
+  end
+
+  def get_avatar_url
+    avatar_url || avatar.url
   end
 
   protected
