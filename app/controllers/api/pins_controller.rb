@@ -10,9 +10,6 @@ class Api::PinsController < ApplicationController
     render :show
   end
 
-  def new
-  end
-
   def create
     @pin = current_user.pins.new(pin_params)
     if @pin.save
@@ -26,9 +23,6 @@ class Api::PinsController < ApplicationController
     @pin = Pin.find(params[:id])
     @pin.destroy!
     render json: {}
-  end
-
-  def edit
   end
 
   def update

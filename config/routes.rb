@@ -7,7 +7,8 @@ Rails.application.routes.draw do
     get "/search", to: "searches#search"
     resource :session, only: [:show, :destroy]
     resources :users
-    resources :boards, except: [:edit]
-    resources :pins
+    resources :boards, except: [:new, :edit]
+    resources :comments, except: [:new, :edit]
+    resources :pins, except: [:new, :edit]
   end
 end
