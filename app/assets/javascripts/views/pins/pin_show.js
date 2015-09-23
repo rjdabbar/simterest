@@ -11,7 +11,8 @@ Simterest.Views.PinShow = Backbone.CompositeView.extend({
 
   addComments: function () {
     var view = new Simterest.Views.CommentIndex({
-      collection: this.model.comments()
+      collection: this.model.comments(),
+      pin: this.model
     });
     this.addSubview("div.pin-comments", view);
   }

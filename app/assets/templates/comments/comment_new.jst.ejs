@@ -5,7 +5,8 @@
   <div class="comment-info">
     <h2><%= Simterest.currentUser.escape("username") %></h2>
     <form class="comment" method="post">
-      <textarea name="comment[body]" rows="8" cols="40" placeholder="Add a comment..."></textarea>
+      <textarea class="comment-body" name="comment[body]"
+                rows="8" cols="40" placeholder="Add a comment..."></textarea>
       <button class="comment">Comment</button>
     </form>
   </div>

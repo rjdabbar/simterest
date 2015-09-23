@@ -7,7 +7,9 @@ Simterest.Views.CommentNew = Backbone.View.extend({
     "click button.comment": "submitComment"
   },
 
-  initialize: function () {},
+  initialize: function (options) {
+    this.pin = options.pin
+  },
 
   render: function () {
     this.$el.html(this.template());
@@ -18,6 +20,7 @@ Simterest.Views.CommentNew = Backbone.View.extend({
     e.preventDefault();
     var comment = this.model;
     var data = $("textarea.comment-body").serializeJSON();
+    data.comment.pin_id = this.pin.id
     comment.save(data.comment, {
       success: function (modal, response, options) {
         this.collection.add(comment);
