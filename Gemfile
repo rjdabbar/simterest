@@ -27,6 +27,9 @@ gem 'figaro'
 #search
 gem 'pg_search'
 
+#omniauth
+gem 'omniauth-facebook'
+
 group :development do
   gem 'pry-rails'
   gem 'better_errors'
