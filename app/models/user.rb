@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
     user.try(:is_password?, password) ? user : nil
   end
 
-  def self.find_or_create_by_auth_hash(hash)
+  def self.find_or_create_by_auth_hash(auth_hash)
     user = User.find_by(
            provider: auth_hash[:provider],
            uid: auth_hash[:uid])
