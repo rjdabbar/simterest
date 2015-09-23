@@ -2,10 +2,30 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-div.commenter-avatar {
-  img {
+ul.comments {
+  padding: 20px;
+}
+
+div.comment-container {
+  padding: 5px;
+  border: 2px solid #f3f3f3;
+  border-radius: 5px;
+  margin-top: 5px;
+
+  div.commenter-avatar {
     width: 50px;
-    height: 50px;
+    float:left;
+
+    img {
+      width: 50px;
+      height: 50px;
+    }
 
   }
+
+  div.comment-info {
+    float: left;
+    margin-left: 20px;
+  }
+
 }

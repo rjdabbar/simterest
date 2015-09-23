@@ -19,6 +19,7 @@ ul, li, button, a, section, nav, main, input, textarea {
   border: 0;
   margin: 0;
   padding: 0;
+  outline: 0;
   box-shadow: none;
   color:inherit;
   font-family: inherit;
@@ -109,6 +110,7 @@ div.modal {
   text-align: left;
   border-radius: 3px;
   box-shadow: 0 0 1px 2px #ccc;
+  margin-bottom: 100px;
 }
 
 div.modal-content {
