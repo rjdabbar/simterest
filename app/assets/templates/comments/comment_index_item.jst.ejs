@@ -1,3 +1,11 @@
-<div class="comment-display">
-    <%= comment.escape("body") %>
+<div class="comment-container">
+  <div class="commenter-avatar">
+    <img src="<%= commenter.escape("avatar_url") %>" alt="" />
+  </div>
+  <div class="comment-info">
+    <h2><%= commenter.escape("username") %></h2>
+    <div class="comment-display">
+        <%= comment.escape("body") %>
+    </div>
+  </div>
 </div>

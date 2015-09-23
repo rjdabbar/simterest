@@ -21,8 +21,10 @@ Simterest.Views.CommentIndex = Backbone.CompositeView.extend({
 
   addComments: function () {
     this.collection.each(function (comment) {
+      var user = Simterest.Collections.users.getOrFetch(comment.get("author_id"))
       var view = new Simterest.Views.CommentIndexItem({
-        model: comment
+        model: comment,
+        commenter: user
       })
       this.addSubview("ul.comments", view, true)
     }.bind(this))

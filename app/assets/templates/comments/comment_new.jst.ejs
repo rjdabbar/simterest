@@ -1,10 +1,12 @@
-<div class=comment-container"">
+<div class="comment-container">
   <div class="commenter-avatar">
-    <img src="<%= Simterest.currentUser.escape("avatar_url") %> " alt="" />  
+    <img src="<%= Simterest.currentUser.escape("avatar_url") %> " alt="" />
   </div>
-  <form class="comment" method="post">
-    <textarea name="comment[body]" rows="8" cols="40" placeholder="Add a comment..."></textarea>
-    <button class="comment">Comment</button>
-  </form>
-
+  <div class="comment-info">
+    <h2><%= Simterest.currentUser.escape("username") %></h2>
+    <form class="comment" method="post">
+      <textarea name="comment[body]" rows="8" cols="40" placeholder="Add a comment..."></textarea>
+      <button class="comment">Comment</button>
+    </form>
+  </div>
 </div>
