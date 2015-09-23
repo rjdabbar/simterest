@@ -1,7 +1,6 @@
 Simterest.Models.Board = Backbone.Model.extend({
   urlRoot: "/api/boards",
 
-
   initialize: function (attrs) {
     this.setId();
   },
@@ -10,7 +9,6 @@ Simterest.Models.Board = Backbone.Model.extend({
     if (this._pins === undefined) {
       this._pins = new Simterest.Collections.Pins([], {board_id: this.id})
     };
-
     return this._pins
   },
 
