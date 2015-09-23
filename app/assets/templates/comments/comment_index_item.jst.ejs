@@ -8,7 +8,9 @@
         <p>
           <%= comment.escape("body") %>
         </p>
-      <button class="delete-comment">X</button>
+      <% if (commenter.id === Simterest.currentUser.id) { %>
+        <button class="delete-comment">X</button>
+      <% } %>
     </div>
   </div>
 </div>

@@ -3,6 +3,10 @@ Simterest.Views.CommentIndexItem = Backbone.View.extend({
   tagName: "li",
   className: "comment comment-item",
 
+  events: {
+    "click button.delete-comment": "deleteComment"
+  },
+
   initialize: function (options) {
     this.commenter = options.commenter;
     this.listenTo(this.commenter, "sync", this.render)
@@ -14,5 +18,10 @@ Simterest.Views.CommentIndexItem = Backbone.View.extend({
       commenter: this.commenter
     }));
     return this;
+  },
+
+  deleteComment: function (e) {
+    e.preventDefault();
+    this.model.destroy();
   }
 })
