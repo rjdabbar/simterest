@@ -11,6 +11,7 @@ div.comment-container {
   border: 2px solid #f3f3f3;
   border-radius: 5px;
   margin-top: 5px;
+  position: relative;
 
   div.commenter-avatar {
     width: 50px;
@@ -26,6 +27,21 @@ div.comment-container {
   div.comment-info {
     float: left;
     margin-left: 20px;
+
+    div.comment-display {
+
+      button.delete-comment {
+        padding: 5px 10px;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+      }
+
+      button.delete-comment:hover {
+        color: red;
+        font-weight: bold;
+      }
+    }
   }
 
 }
