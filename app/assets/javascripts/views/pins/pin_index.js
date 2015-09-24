@@ -23,6 +23,7 @@ Simterest.Views.PinIndex = Backbone.CompositeView.extend({
   addPins: function () {
     this.collection.each(function(pin) {
       var view = new Simterest.Views.PinIndexItem({
+        user: this.user,
         collection: this.collection,
         model: pin
       });

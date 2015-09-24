@@ -3,10 +3,6 @@ Simterest.Views.SearchIndex = Backbone.CompositeView.extend({
   tagName: "ul",
   className: "results-list",
 
-  events: {
-    "click button.search": "search"
-  },
-
   initialize: function () {
     this.listenTo(this.collection, "sync", this.populateSearchResults);
   },
