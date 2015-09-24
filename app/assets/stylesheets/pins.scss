@@ -93,6 +93,41 @@ li.pin:hover .overlay-dark {
 // PIN FORM STYLINGS
 // *****************
 
+input#pin_source {
+  width: 500px;
+  height: 20px;
+  font-size: 16px;
+}
+
+form.pin {
+  textarea#pin_description {
+    width: 500px;
+    font-size: 16px;
+  }
+
+}
+
+form.pin {
+  button {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+  }
+  button.delete {
+    background: #ddd;
+  }
+
+  button.save {
+    background: red;
+    color: white;
+    float: right;
+  }
+
+  button.cancel {
+    background: #ddd;
+  }
+}
+
 // *****************
 // SOURCE FORM STYLINGS
 // *****************
