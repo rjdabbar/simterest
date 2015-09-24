@@ -2,12 +2,12 @@
 </div>
 <div class="modal">
   <div class="modal-content">
+    <form class="board" method="post">
     <% if(board.id) { %>
       <h3><b>Edit your board</b> <%= board.escape("title") %></h3>
     <%  } else { %>
       <h2>Create a board</h2>
     <%  } %>
-    <form class="board" method="post">
     <ul class="form-list">
       <li>
         <h3><label for="board_title">Title:</label></h3>

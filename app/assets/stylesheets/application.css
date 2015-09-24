@@ -46,6 +46,7 @@ input {
 
 input:focus {
   background: #fff;
+  outline: 2px solid #ad0000;
 }
 
 textarea {
@@ -55,6 +56,7 @@ textarea {
 
 textarea:focus {
   background: #fff;
+  outline: 2px solid #ad0000;
 }
 
 .group:after {
@@ -105,12 +107,11 @@ div.modal {
   display: block;
   z-index: 2;
   background: #fff;
-  margin: 200px 20% 0 20%;
+  margin: 10% 20%;
   position: absolute;
   text-align: left;
   border-radius: 3px;
   box-shadow: 0 0 1px 2px #ccc;
-  margin-bottom: 100px;
 }
 
 div.modal-content {
@@ -191,6 +192,7 @@ div.search-results {
   width: 500px;
   background: #eee;
   padding: 5px;
+  z-index: 10;
 }
 
 li.search-item {
