@@ -1,11 +1,12 @@
 Simterest.Views.PinShow = Backbone.CompositeView.extend({
   template: JST['pins/pin_show'],
 
-  initialize: function () {},
+  initialize: function () {
+    this.listenTo(this.model, "sync", this.addComments);
+  },
 
   render: function () {
     this.$el.html(this.template({pin: this.model}))
-    this.addComments();
     return this;
   },
 

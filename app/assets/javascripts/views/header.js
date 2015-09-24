@@ -56,7 +56,9 @@ Simterest.Views.Header = Backbone.CompositeView.extend({
       },
       reset: true
     });
-    Backbone.history.navigate("/search/query=" + this.searchResults.query, { trigger: true });
+    // why isnt this encoding
+    var encoded = encodeURI(this.searchResults.query);
+    Backbone.history.navigate("/search/query=" + encoded, { trigger: true });
   },
 
   hideSearchResults: function () {
@@ -66,7 +68,7 @@ Simterest.Views.Header = Backbone.CompositeView.extend({
   },
 
   clearSearchResults: function () {
-    this.$("div.search-results").hide();
+    $("div.search-results").hide();
     this.$("input.query").val("");
   },
 
