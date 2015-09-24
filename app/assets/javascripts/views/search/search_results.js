@@ -2,7 +2,10 @@ Simterest.Views.SearchResults = Backbone.CompositeView.extend({
   template: JST["search/search_results"],
 
   initialize: function (options) {
+    this.searchResults = new Simterest.Collections.SearchResults();
     this.query = options.query;
+    this.fetchQuery();
+    this.listenTo(this.searchResults, "sync", this.addPins)
   },
 
   render: function () {
@@ -11,14 +14,21 @@ Simterest.Views.SearchResults = Backbone.CompositeView.extend({
   },
 
   addPins: function () {
-    this.collection.each(function(pin) {
+    this.searchResults.each(function(pin) {
       var view = new Simterest.Views.PinIndexItem({
-        user: this.user,
-        collection: this.collection,
+        collection: this.searchResults,
         model: pin
       });
       this.addSubview("ul.search-index", view, true)
     }.bind(this))
+  },
+
+  fetchQuery: function () {
+    this.searchResults.fetch({
+      data: {
+        query: this.query
+      }
+    });
   }
 
 })

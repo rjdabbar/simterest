@@ -1,9 +1,7 @@
 Simterest.Models.Pin = Backbone.Model.extend({
   urlRoot: "api/pins",
 
-  initialize: function (attrs) {
-    this.setId();
-  },
+  initialize: function () {},
 
   comments: function () {
     if (typeof this._comments === "undefined") {

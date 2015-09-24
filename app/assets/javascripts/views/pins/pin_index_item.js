@@ -14,7 +14,7 @@ Simterest.Views.PinIndexItem = Backbone.View.extend({
   },
 
   initialize: function (options) {
-    this.user = options.user;
+    this.user = options.user || Simterest.Collections.users.getOrFetch(this.model.get("pinner_id"));
     this.listenTo(this.model, "sync change", this.render);
   },
 
