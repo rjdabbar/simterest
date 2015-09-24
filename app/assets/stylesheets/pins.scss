@@ -205,7 +205,9 @@ div.pin-image-holder {
   height: 400px;
   float: left;
   border-right: 1px solid #ccc;
-  background: #ddd
+  background: #ddd;
+  padding: 20px;
+  margin: 20px;
 }
 
 img.pin-image {
@@ -236,7 +238,9 @@ div.pin-boards {
 }
 
 li.pin-board-item {
-
+  margin-top: 5px;
+  width: 370px;
+  margin-left: 330px;
 }
 
 li.pin-board-item:hover {
@@ -249,9 +253,22 @@ li.pin-board-item:hover {
 // PIN SHOW STYLES
 // ****************
 
+div.pin-info {
+  p {
+    margin: 10px 0 10px 10px;
+    font-size: 14px;
+  }
+}
 div.main-pin-view {
   img {
     width: 700px;
     border-radius: 5px;
+  }
+}
+
+div.comment-display {
+  p {
+    width: 560px;
+    word-wrap: break-word;
   }
 }

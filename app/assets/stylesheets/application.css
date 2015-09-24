@@ -103,6 +103,10 @@ div.screen {
   opacity: .4;
 }
 
+div.screen:hover {
+  cursor: zoom-out;
+}
+
 div.modal {
   display: block;
   z-index: 2;
