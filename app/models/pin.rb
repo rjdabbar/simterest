@@ -7,11 +7,11 @@ class Pin < ActiveRecord::Base
   belongs_to :board
 
   has_many :comments
-  
+
   has_attached_file :image
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
-  multisearchable against: :description
+  # multisearchable against: :description
 
   def get_image_url
     source_url || image.url

@@ -39,7 +39,8 @@ Simterest.Views.Header = Backbone.CompositeView.extend({
     this.searchResults.query = this.$("input.query").val();
     this.searchResults.fetch({
       data: {
-        query: this.searchResults.query
+        query: this.searchResults.query,
+        multi: true
       },
       reset: true
     });
