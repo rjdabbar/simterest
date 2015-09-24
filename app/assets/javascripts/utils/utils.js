@@ -53,3 +53,13 @@ Backbone.View.prototype.setModal = function (view) {
 Backbone.View.prototype.modal = function () {
   return this._modal;
 };
+
+Backbone.CompositeView.prototype.closeModal = function () {
+  this.removeSubview(".content-wrapper", this.modal());
+},
+
+Backbone.CompositeView.prototype.openModal = function (view) {
+  if (this.modal()) { this.closeModal(); };
+  this.addSubview(".content-wrapper", view, true)
+  this.setModal(view);
+};
