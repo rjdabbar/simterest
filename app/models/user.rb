@@ -7,7 +7,6 @@ class User < ActiveRecord::Base
   attr_accessor :password
 
   after_initialize :ensure_session_token
-  before_save :ensure_username
 
   has_many :boards, foreign_key: :creator_id, dependent: :destroy
   has_many :pins, foreign_key: :pinner_id, dependent: :destroy
@@ -38,6 +37,7 @@ class User < ActiveRecord::Base
            uid: auth_hash[:uid],
            full_name: auth_hash[:info][:name],
            avatar_url: auth_hash[:info][:image],
+           username: auth_hash[:info][:name].downcase.split.join + SecureRandom::urlsafe_base64(6),
            password: SecureRandom::urlsafe_base64)
    end
 
@@ -68,7 +68,4 @@ class User < ActiveRecord::Base
     self.session_token ||= User.generate_secure_token
   end
 
-  def ensure_username
-    self.username ||= self.full_name.downcase.split.join + SecureRandom::urlsafe_base64(6)
-  end
 end
