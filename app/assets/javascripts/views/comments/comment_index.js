@@ -9,8 +9,8 @@ Simterest.Views.CommentIndex = Backbone.CompositeView.extend({
   render: function () {
     this.$el.html(this.template())
     this.removeSubviews();
-    this.addNewComment();
     this.addComments();
+    this.addNewComment();
     return this;
   },
 
@@ -21,7 +21,7 @@ Simterest.Views.CommentIndex = Backbone.CompositeView.extend({
       collection: this.collection,
       pin: this.pin
     });
-    this.addSubview("ul.comments", view, true);
+    this.addSubview("ul.comments", view);
   },
 
   addComments: function () {
@@ -32,7 +32,7 @@ Simterest.Views.CommentIndex = Backbone.CompositeView.extend({
         commenter: user,
         collection: this.collection
       })
-      this.addSubview("ul.comments", view, true)
+      this.addSubview("ul.comments", view)
     }.bind(this))
   },
 
