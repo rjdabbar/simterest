@@ -9,10 +9,10 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
   before_save :ensure_username
 
-  has_many :boards, foreign_key: :creator_id
-  has_many :pins, foreign_key: :pinner_id
+  has_many :boards, foreign_key: :creator_id, dependant: :destroy
+  has_many :pins, foreign_key: :pinner_id, dependant: :destroy
   has_many :shared_pins, foreign_key: :via_user_id, class_name: "Pin"
-  has_many :comments, foreign_key: :author_id
+  has_many :comments, foreign_key: :author_id, dependant: :destroy
   has_attached_file :avatar, default_url: "missing.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 

@@ -4,7 +4,7 @@ class Board < ActiveRecord::Base
   validates :title, :creator_id, presence: true
 
   belongs_to :creator, foreign_key: :creator_id, class_name: "User"
-  has_many :pins
+  has_many :pins, dependant: :destroy
 
   multisearchable  against: :title
   after_initialize :default_boards_to_not_be_secret

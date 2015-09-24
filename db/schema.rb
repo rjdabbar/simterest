@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150923203213) do
+ActiveRecord::Schema.define(version: 20150924141610) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 20150923203213) do
   create_table "pins", force: :cascade do |t|
     t.text     "description"
     t.integer  "pinner_id",          null: false
-    t.integer  "board_id",           null: false
+    t.integer  "board_id"
     t.string   "image_url"
     t.string   "source_url"
     t.string   "image_alt"
