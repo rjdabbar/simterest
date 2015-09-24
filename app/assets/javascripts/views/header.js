@@ -14,7 +14,8 @@ Simterest.Views.Header = Backbone.CompositeView.extend({
       collection: this.searchResults
     });
     this.listenTo(Simterest.currentUser, "sync", this.render);
-    this.listenTo(this.searchResults, "sync", this.hideSearchResults)
+    this.listenTo(this.searchResults, "sync", this.hideSearchResults);
+    this.listenTo(Backbone.history, "route", this.clearSearchResults)
   },
 
   render: function () {
@@ -35,7 +36,7 @@ Simterest.Views.Header = Backbone.CompositeView.extend({
 
   search: function (e) {
     e.preventDefault();
-    this.searchResults.query = $("input.query").val();
+    this.searchResults.query = this.$("input.query").val();
     this.searchResults.fetch({
       data: {
         query: this.searchResults.query
@@ -46,8 +47,14 @@ Simterest.Views.Header = Backbone.CompositeView.extend({
 
   hideSearchResults: function () {
     if(this.searchResults.length === 0) {
-      $("div.search-results").hide();
+      this.$("div.search-results").hide();
     }
   },
+
+  clearSearchResults: function () {
+    this.$("div.search-results").hide();
+    this.$("input.query").val("");
+  },
+
 
 })
