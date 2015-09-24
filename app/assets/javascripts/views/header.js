@@ -56,7 +56,7 @@ Simterest.Views.Header = Backbone.CompositeView.extend({
       },
       reset: true
     });
-    Backbone.history.navigate("/search", { trigger: true });
+    Backbone.history.navigate("/search/query=" + this.searchResults.query, { trigger: true });
   },
 
   hideSearchResults: function () {
