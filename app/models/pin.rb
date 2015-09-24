@@ -11,7 +11,8 @@ class Pin < ActiveRecord::Base
   has_attached_file :image
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
-  # multisearchable against: :description
+  pg_search_scope :search_by_description, against: :description,
+                    using: { tsearch: { prefix: true } }
 
   def get_image_url
     source_url || image.url
