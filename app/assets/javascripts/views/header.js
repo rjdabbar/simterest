@@ -4,7 +4,7 @@ Simterest.Views.Header = Backbone.CompositeView.extend({
   events: {
     "click button.profile": "userShow",
     "click button.sign-out": "signOut",
-    "input input.query": "search"
+    "input input.query": "multiSearch"
 
   },
 
@@ -34,7 +34,7 @@ Simterest.Views.Header = Backbone.CompositeView.extend({
     Simterest.currentUser.signOut();
   },
 
-  search: function (e) {
+  multiSearch: function (e) {
     e.preventDefault();
     this.searchResults.query = this.$("input.query").val();
     this.searchResults.fetch({
