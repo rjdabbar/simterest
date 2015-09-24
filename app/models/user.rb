@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
 
   attr_accessor :password
 
-  after_initialize :ensure_session_token, :ensure_username
+  after_initialize :ensure_session_token
+  before_save :ensure_username
 
   has_many :boards, foreign_key: :creator_id
   has_many :pins, foreign_key: :pinner_id
