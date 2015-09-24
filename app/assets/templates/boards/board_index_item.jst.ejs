@@ -9,5 +9,7 @@
     <img src="<%= board.escape("pin_thumb_three") %>" alt="" />
   </div>
 </div>
-<button class="edit">Edit</button>
+<% if (Simterest.currentUser.id === board.escape("creator_id")) { %>
+  <button class="edit">Edit</button>
+<% } %>
 <!-- <div class="overlay-light"></div> -->
