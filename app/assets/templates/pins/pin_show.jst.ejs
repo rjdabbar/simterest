@@ -2,6 +2,9 @@
 <div class="modal">
   <div class="modal-content">
     <div class="main-pin-view">
+      <div class="pin-info">
+        <h3>Pinned by: <a href="#<%= user.id %>"><%= user.escape("username") %></h3></a>
+      </div>
       <img src="<%= pin.escape("image_url") %>" alt="" />
     </div>
     <div class="pin-comments">

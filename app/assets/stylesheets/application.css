@@ -116,6 +116,7 @@ div.modal {
 
 div.modal-content {
   width: 700px;
+  padding: 20px;
 }
 
 div.auth-modal {

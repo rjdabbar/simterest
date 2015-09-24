@@ -43,5 +43,27 @@ div.comment-container {
       }
     }
   }
+}
 
+li.new-comment {
+  div.comment-container {
+    div.comment-info {
+      form.comment {
+        textarea {
+          width: 400px;
+          float: left;
+          font-size: 16px;
+        }
+        button.comment {
+          margin: 40px 0 0 30px;
+          border-radius: 3px;
+          border: 1px solid #ccc;
+          padding: 10px 20px;
+          background: red;
+          color: white;
+          font-size: 18px;
+        }
+      }
+    }
+  }
 }
