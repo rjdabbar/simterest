@@ -58,16 +58,6 @@ Simterest.Views.UserShow = Backbone.CompositeView.extend({
     this.openModal(view);
   },
 
-  openModal: function (view) {
-    if (this.modal()) { this.closeModal(); };
-    this.addSubview(".content-wrapper", view, true)
-    this.setModal(view);
-  },
-
-  closeModal: function () {
-    this.removeSubview(".content-wrapper", this.modal());
-  },
-
   swapIndex: function (newIndex) {
     this.currentIndex && this.removeSubview(".main-content", this.currentIndex);
     this.currentIndex = newIndex;

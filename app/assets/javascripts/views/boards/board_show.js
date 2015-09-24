@@ -29,13 +29,4 @@ Simterest.Views.BoardShow = Backbone.CompositeView.extend({
     this.addSubview("div.main-content", pinIndex)
   },
 
-  openModal: function (view) {
-    if (this.modal()) { this.closeModal(); };
-    this.addSubview(".content-wrapper", view, true)
-    this.setModal(view);
-  },
-
-  closeModal: function () {
-    this.removeSubview(".content-wrapper", this.modal());
-  },
 })
