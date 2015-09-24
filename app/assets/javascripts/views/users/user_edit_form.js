@@ -15,6 +15,7 @@ Simterest.Views.UserEditForm = Backbone.View.extend({
   updateProfile: function (e) {
     e.preventDefault();
     var data = this._gatherFormData();
+    
     var user = this.model
     user.saveFormData(data, {
       success: function (model, response, options) {
@@ -31,7 +32,7 @@ Simterest.Views.UserEditForm = Backbone.View.extend({
     var location = this.$("#user_location").val();
     var formData = new FormData();
     formData.append("user[full_name]", fullName);
-    formData.append("user[avatar]", avatar);
+    avatar && formData.append("user[avatar]", avatar);
     formData.append("user[username]", username);
     formData.append("user[description]", description);
     formData.append("user[location]", location);

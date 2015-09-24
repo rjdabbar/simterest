@@ -37,5 +37,6 @@ Simterest.Views.BoardForm = Backbone.View.extend({
     e.preventDefault();
     this.model.destroy();
     this.collection.trigger("closeModal");
-  }
+  },
+
 })
