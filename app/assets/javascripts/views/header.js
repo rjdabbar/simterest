@@ -57,7 +57,7 @@ Simterest.Views.Header = Backbone.CompositeView.extend({
       reset: true
     });
     // why isnt this encoding
-    var encoded = encodeURI(this.searchResults.query);
+    var encoded = encodeURI(this.searchResults.query.split(" ").join("+"));
     Backbone.history.navigate("/search/query=" + encoded, { trigger: true });
   },
 

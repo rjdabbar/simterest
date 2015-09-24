@@ -9,19 +9,19 @@ Simterest.Views.SearchResults = Backbone.CompositeView.extend({
     this.searchResults = new Simterest.Collections.SearchResults();
     this.query = decodeURI(options.query);
     this.fetchQuery();
-
     this.listenTo(this.searchResults, "loaded", this.addPins);
     this.listenTo(this.searchResults, "openModal", this.openModal);
     this.listenTo(this.searchResults, "closeModal", this.closeModal);
   },
 
   render: function () {
+    this.clearSearchResults();
     this.$el.html(this.template());
     return this;
   },
 
   addPins: function () {
-    this.removeSubviews();
+    this.purge();
     this.searchResults.each(function(pin) {
       var view = new Simterest.Views.PinIndexItem({
         collection: this.searchResults,
@@ -41,6 +41,15 @@ Simterest.Views.SearchResults = Backbone.CompositeView.extend({
         this.searchResults.trigger("loaded")
       }.bind(this)
     });
+  },
+
+  purge: function () {
+    this.removeSubviews();
+    this.clearSearchResults();
+  },
+
+  clearSearchResults: function () {
+    $("div.search-results").hide();
   }
 
 })
