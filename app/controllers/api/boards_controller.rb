@@ -23,7 +23,7 @@ class Api::BoardsController < ApplicationController
 
   def show
     # logic for seeing public boards only goes here
-    @board = Board.find(params[:id])
+    @board = Board.include(:pins).find(params[:id])
     render :show
   end
 
@@ -37,7 +37,7 @@ class Api::BoardsController < ApplicationController
     @board.destroy!
     render json: {}
   end
-  
+
   private
 
   def board_params
