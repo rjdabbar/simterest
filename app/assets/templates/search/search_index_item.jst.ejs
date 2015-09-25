@@ -1,5 +1,5 @@
 <% if (result.attributes.title) { %>
-  <a href="#/<%= result.escape("creator_id") %>/<%= result.id %>"><%= result.escape("title") %></a>
+  <a href="#/<%= result.escape("creator_slug") %>/<%= result.get("slug") %>"><%= result.escape("title") %></a>
 <% } else if (result.attributes.username) { %>
-  <a href="#/<%= result.id %>"><%= result.escape("username") %></a>
+  <a href="#/<%= result.get("slug") %>"><%= result.escape("username") %></a>
 <% } %>
