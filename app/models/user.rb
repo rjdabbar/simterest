@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   validates :username, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
-  attr_accessor :password
+  attr_accessor :password, :username, :slug
 
   after_initialize :ensure_session_token
 
@@ -60,6 +60,14 @@ class User < ActiveRecord::Base
 
   def get_avatar_url
     avatar_url || avatar.url
+  end
+
+  def slug
+    username.downcase.gsub(" ", "-")
+  end
+
+  def to_param
+    slug
   end
 
   protected

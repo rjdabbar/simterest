@@ -1,6 +1,8 @@
 class Board < ActiveRecord::Base
   include PgSearch
 
+  attr_accesor :slug, :title
+  
   validates :title, :creator_id, presence: true
 
   belongs_to :creator, foreign_key: :creator_id, class_name: "User"
@@ -11,6 +13,14 @@ class Board < ActiveRecord::Base
 
   def index_thumbs
     self.pins[-4..-1]
+  end
+
+  def slug
+    title.downcase.gsub(" ", "-")
+  end
+
+  def to_param
+    slug
   end
 
   private
