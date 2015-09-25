@@ -17,6 +17,10 @@ class Board < ActiveRecord::Base
     slug
   end
 
+  def creator_slug
+    self.creator.slug
+  end
+
   private
 
   def default_boards_to_not_be_secret

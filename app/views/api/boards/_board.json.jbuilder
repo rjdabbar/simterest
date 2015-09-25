@@ -1,5 +1,5 @@
 json.extract! board, :id, :creator_id, :title, :description, :category,
-                        :secret, :created_at, :updated_at, :slug
+                        :secret, :created_at, :updated_at, :slug, :creator_slug
 json.main_pin_image board.pins.first.get_image_url if board.pins.length > 0
 json.pin_thumb_one board.pins[-1].get_image_url if board.pins.length > 1
 json.pin_thumb_two board.pins[-2].get_image_url if board.pins.length > 2
