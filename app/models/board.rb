@@ -1,8 +1,8 @@
 class Board < ActiveRecord::Base
   include PgSearch
 
-  attr_accesor :slug, :title
-  
+  attr_accessor :slug, :title
+
   validates :title, :creator_id, presence: true
 
   belongs_to :creator, foreign_key: :creator_id, class_name: "User"
