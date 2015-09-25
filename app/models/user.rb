@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
   before_save :set_slug
-  
+
   has_many :boards, foreign_key: :creator_id, dependent: :destroy
   has_many :pins, foreign_key: :pinner_id, dependent: :destroy
   has_many :shared_pins, foreign_key: :via_user_id, class_name: "Pin"
@@ -39,8 +39,8 @@ class User < ActiveRecord::Base
            uid: auth_hash[:uid],
            full_name: auth_hash[:info][:name],
            avatar_url: auth_hash[:info][:image],
-           slug: auth_hash[:info][:name].downcase.split.join + "_" + token,
-           username: auth_hash[:info][:name].downcase.split.join + "_" + token,
+           slug: auth_hash[:info][:name].downcase.split.join + "-" + token,
+           username: auth_hash[:info][:name].downcase.split.join + "-" + token,
            password: SecureRandom::urlsafe_base64)
    end
 
