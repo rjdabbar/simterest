@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   validates :username, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
-  attr_accessor :password, :slug
+  attr_accessor :password
 
   after_initialize :ensure_session_token
 
@@ -32,12 +32,14 @@ class User < ActiveRecord::Base
            uid: auth_hash[:uid])
 
    unless user
+     token = SecureRandom::urlsafe_base64(6)
      user = User.create!(
            provider: auth_hash[:provider],
            uid: auth_hash[:uid],
            full_name: auth_hash[:info][:name],
            avatar_url: auth_hash[:info][:image],
-           username: auth_hash[:info][:name].downcase.split.join + SecureRandom::urlsafe_base64(6),
+           slug: auth_hash[:info][:name].downcase.split.join + "_" + token,
+           username: auth_hash[:info][:name].downcase.split.join + "_" + token,
            password: SecureRandom::urlsafe_base64)
    end
 
@@ -60,10 +62,6 @@ class User < ActiveRecord::Base
 
   def get_avatar_url
     avatar_url || avatar.url
-  end
-
-  def slug
-    username.downcase.gsub(" ", "-")
   end
 
   def to_param

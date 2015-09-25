@@ -19,6 +19,7 @@ Simterest.Views.BoardForm = Backbone.View.extend({
   submit: function (e) {
     e.preventDefault();
     var data = $(e.currentTarget).serializeJSON();
+    data.board.slug = data.board.title.replace(/ /g,"_");
     var board = this.model
     board.save(data.board, {
       success: function (model, response, options) {

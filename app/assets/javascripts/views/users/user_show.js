@@ -47,7 +47,7 @@ Simterest.Views.UserShow = Backbone.CompositeView.extend({
   },
 
   showBoard: function (board) {
-    Backbone.history.navigate(this.model.id + "/" + board.id, {trigger: true})
+    Backbone.history.navigate(this.model.get("slug") + "/" + board.get("slug"), {trigger: true})
   },
 
   editProfie: function (e) {

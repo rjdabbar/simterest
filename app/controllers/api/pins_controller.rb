@@ -6,7 +6,7 @@ class Api::PinsController < ApplicationController
   end
 
   def show
-    @pin = Pin.include(:comments).find(params[:id])
+    @pin = Pin.includes(:comments).find(params[:id])
     render :show
   end
 

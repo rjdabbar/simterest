@@ -23,7 +23,7 @@ class Api::BoardsController < ApplicationController
 
   def show
     # logic for seeing public boards only goes here
-    @board = Board.include(:pins).find(params[:id])
+    @board = Board.includes(:pins).find_by(slug: params[:id])
     render :show
   end
 
@@ -41,6 +41,6 @@ class Api::BoardsController < ApplicationController
   private
 
   def board_params
-    params.require(:board).permit(:title, :description, :category, :secret)
+    params.require(:board).permit(:title, :description, :category, :secret, :slug)
   end
 end
