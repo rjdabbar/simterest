@@ -1,7 +1,7 @@
 class Board < ActiveRecord::Base
   include PgSearch
 
-  attr_accessor :slug, :title
+  attr_accessor :slug
 
   validates :title, :creator_id, presence: true
 

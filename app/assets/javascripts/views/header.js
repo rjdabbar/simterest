@@ -27,7 +27,7 @@ Simterest.Views.Header = Backbone.CompositeView.extend({
 
   userShow: function (e) {
     e.preventDefault();
-    Backbone.history.navigate("" + Simterest.currentUser.id, {trigger: true})
+    Backbone.history.navigate("" + Simterest.currentUser.get("slug"), {trigger: true})
   },
 
   signOut: function (e) {
