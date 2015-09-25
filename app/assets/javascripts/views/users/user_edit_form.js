@@ -15,11 +15,12 @@ Simterest.Views.UserEditForm = Backbone.View.extend({
   updateProfile: function (e) {
     e.preventDefault();
     var data = this._gatherFormData();
-    
+
     var user = this.model
     user.saveFormData(data, {
       success: function (model, response, options) {
         this.model.trigger("closeModal")
+        Backbone.history.navigate(this.model.get("slug"), {trigger: true})
       }.bind(this)
     })
   },
