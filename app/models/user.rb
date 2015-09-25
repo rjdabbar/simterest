@@ -7,7 +7,8 @@ class User < ActiveRecord::Base
   attr_accessor :password
 
   after_initialize :ensure_session_token
-
+  before_save :set_slug
+  
   has_many :boards, foreign_key: :creator_id, dependent: :destroy
   has_many :pins, foreign_key: :pinner_id, dependent: :destroy
   has_many :shared_pins, foreign_key: :via_user_id, class_name: "Pin"
@@ -49,6 +50,11 @@ class User < ActiveRecord::Base
   def password=(password)
     self.password_digest = BCrypt::Password.create(password)
   end
+
+  def set_slug
+    self.slug = self.username
+  end
+
 
   def is_password?(password)
     BCrypt::Password.new(self.password_digest).is_password?(password)
