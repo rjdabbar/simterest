@@ -22,7 +22,6 @@ class Api::BoardsController < ApplicationController
   end
 
   def show
-    # logic for seeing public boards only goes here
     @board = Board.includes(:pins).find_by(slug: params[:id])
     render :show
   end
