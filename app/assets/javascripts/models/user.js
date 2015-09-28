@@ -39,7 +39,7 @@ Simterest.Models.CurrentUser = Simterest.Models.User.extend({
   url: "api/session",
 
   isSignedIn: function () {
-    return !this.isNew();
+    return !this.isNew());
   },
 
   signOut: function(options){
