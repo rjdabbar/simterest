@@ -65,22 +65,8 @@ textarea:focus {
   display: block;
 }
 
-div.backdrop {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  background-image: url("background.jpg")
-}
 
-div.splash {
-  width: 400px;
-  padding: 30px;
-  background: #bbb;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  margin: 20%;
-  box-shadow: 0 3px 2px 0 black;
-}
+
 
 .overlay-light {
   text-align: center;
