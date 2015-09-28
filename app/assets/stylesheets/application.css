@@ -65,6 +65,14 @@ textarea:focus {
   display: block;
 }
 
+div.splash {
+  width: 400px;
+  background: #ddd;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin: 20% auto;
+}
+
 .overlay-light {
   text-align: center;
   width: 100%;
