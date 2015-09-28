@@ -12,7 +12,9 @@ Simterest.Routers.Router = Backbone.Router.extend({
     ":userId/:boardId"    : "boardShow",
   },
 
-  index: function () {},
+  index: function () {
+
+  },
 
   userShow: function (userId) {
     var user = this.users.getOrFetch(userId);
